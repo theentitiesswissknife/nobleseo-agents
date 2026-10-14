@@ -12,7 +12,7 @@ import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from _gsc_data import load_table
+from _gsc_data import load_table, require_columns, require_rows
 
 # Professional color palette (colorblind-friendly)
 COLORS = ["#2ecc71", "#3498db", "#e74c3c", "#9b59b6", "#f39c12", "#1abc9c"]
@@ -66,15 +66,18 @@ def main():
         print("Error: Empty dataset", file=sys.stderr)
         sys.exit(1)
 
+    require_columns(df, [args.x, *args.y, *(args.y2 or [])])
+
     # Parse dates
     df[args.x] = pd.to_datetime(df[args.x], format=args.date_format, errors="coerce")
     df = df.dropna(subset=[args.x]).sort_values(args.x)
+    require_rows(df, f"no valid dates in '{args.x}' for format {args.date_format}")
 
-    # Apply smoothing if requested
+    # Apply smoothing if requested: a time-based 7-day window, correct even with gaps
     if args.smooth:
+        indexed = df.set_index(args.x)
         for col in args.y + (args.y2 or []):
-            if col in df.columns:
-                df[col] = df[col].rolling(window=7, min_periods=1).mean()
+            df[col] = indexed[col].rolling("7D", min_periods=1).mean().to_numpy()
 
     # Create figure
     fig, ax1 = plt.subplots()

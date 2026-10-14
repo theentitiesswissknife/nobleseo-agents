@@ -39,7 +39,7 @@ Create the `charts/` folder first if it does not exist. Never overwrite a user's
 | Which queries or pages lead? | `gsc_bar.py` |
 | How is traffic split (device, country)? | `gsc_pie.py` |
 | Is position related to CTR? | `gsc_scatter.py` |
-| When do clicks happen (day × hour), or device × country? | `gsc_heatmap.py` |
+| When do clicks happen (day × hour), or device × country? Weekday names or abbreviations are ordered Monday → Sunday. | `gsc_heatmap.py` |
 | How do several metrics move together? | `gsc_comparison.py` |
 
 All scripts take `--data` (CSV or JSON), `--title` and `--output`.
@@ -48,7 +48,7 @@ All scripts take `--data` (CSV or JSON), `--title` and `--output`.
 
 `--x` date column; `--y` one or more metrics; optional:
 - `--y2` metrics on a secondary axis (for `Position`, lower is better);
-- `--smooth` (7-day rolling average);
+- `--smooth` (7-day rolling average over calendar days, so gaps in the dates are handled);
 - `--annotate-peaks`;
 - `--date-format` (default `%Y-%m-%d`).
 
@@ -105,7 +105,7 @@ python scripts/gsc_heatmap.py --data hourly.json --x day_of_week --y hour --valu
 
 `--x` (usually a date) and `--metrics` (two or more); optional:
 - `--normalize` (scale each metric to 0–100 %, so different units can share one axis);
-- `--stacked` (stacked areas).
+- `--stacked` (stacked areas; with `--normalize` each layer is 0–100 % and the axis grows to fit the total).
 
 ```bash
 python scripts/gsc_comparison.py --data daily.csv --x Date --metrics Clicks Impressions --normalize --title "Clicks vs impressions (normalised)" --output charts/comparison.png
@@ -117,8 +117,9 @@ Charts are 12 × 6 inches at 150 DPI with a white background, light grid and a c
 
 ## Errors
 
-The scripts print the problem and stop:
-- an unknown column name: re-check the header;
+The scripts print the problem and stop without saving a chart:
+- an unknown column name, including optional columns such as `--y2`, `--size` or `--color-by`: the message lists the available columns;
+- no usable rows (for example no valid dates for `--date-format`);
 - an empty file;
 - an unsupported file type: use `.csv` or `.json`.
 

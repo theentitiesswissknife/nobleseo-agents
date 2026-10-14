@@ -11,7 +11,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from _gsc_data import load_table
+from _gsc_data import load_table, require_columns, require_rows, weekday_order
 import seaborn as sns
 
 
@@ -58,6 +58,8 @@ def main():
         print("Error: Empty dataset", file=sys.stderr)
         sys.exit(1)
 
+    require_columns(df, [args.x, args.y, args.value])
+
     # Pivot data for heatmap
     try:
         pivot_df = df.pivot_table(
@@ -67,12 +69,13 @@ def main():
         print(f"Error pivoting data: {e}", file=sys.stderr)
         sys.exit(1)
 
-    # Order days of week if applicable
-    day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    if args.x == "day_of_week" and all(d in pivot_df.columns for d in day_order):
-        pivot_df = pivot_df[day_order]
-    elif args.y == "day_of_week" and all(d in pivot_df.index for d in day_order):
-        pivot_df = pivot_df.reindex(day_order)
+    # Order weekday names or abbreviations Monday→Sunday, whichever axis holds them
+    columns_order = weekday_order(pivot_df.columns)
+    if columns_order:
+        pivot_df = pivot_df[columns_order]
+    index_order = weekday_order(pivot_df.index)
+    if index_order:
+        pivot_df = pivot_df.reindex(index_order)
 
     # Create figure
     fig, ax = plt.subplots()

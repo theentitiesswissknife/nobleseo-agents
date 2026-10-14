@@ -11,7 +11,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from _gsc_data import load_table
+from _gsc_data import load_table, require_columns, require_rows
 
 COLORS = ["#2ecc71", "#3498db", "#e74c3c", "#9b59b6", "#f39c12", "#1abc9c"]
 
@@ -69,12 +69,15 @@ def main():
         print("Error: Empty dataset", file=sys.stderr)
         sys.exit(1)
 
+    require_columns(df, [args.x, *args.metrics])
+
     # Parse dates if X looks like a date column
-    try:
-        df[args.x] = pd.to_datetime(df[args.x])
-        df = df.sort_values(args.x)
-    except:
-        pass  # Keep as-is if not a date
+    # Only text columns are tried as dates: numbers such as hours stay numeric
+    if not pd.api.types.is_numeric_dtype(df[args.x]):
+        parsed = pd.to_datetime(df[args.x], errors="coerce")
+        if parsed.notna().all():
+            df[args.x] = parsed
+    df = df.sort_values(args.x)
 
     # Normalize if requested
     plot_df = df.copy()
@@ -117,8 +120,9 @@ def main():
     # Labels
     ax.set_xlabel("")
     if args.normalize:
-        ax.set_ylabel("Normalized Value (%)")
-        ax.set_ylim(0, 105)
+        ax.set_ylabel("Normalized Value (%)" if not args.stacked else "Normalized Value (%, stacked)")
+        # Stacked areas add up: size the axis to the cumulative total, not to 100
+        ax.set_ylim(0, 105 * (len(args.metrics) if args.stacked else 1))
     else:
         ax.set_ylabel("Value")
 

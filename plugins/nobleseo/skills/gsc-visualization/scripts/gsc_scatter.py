@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from _gsc_data import load_table
+from _gsc_data import load_table, require_columns, require_rows
 
 from scipy import stats
 
@@ -66,19 +66,23 @@ def main():
         print("Error: Empty dataset", file=sys.stderr)
         sys.exit(1)
 
+    require_columns(df, [args.x, args.y, args.size, args.color])
+
     # Remove rows with missing values in key columns
     df = df.dropna(subset=[args.x, args.y])
+    require_rows(df, f"every row is missing '{args.x}' or '{args.y}'")
 
     # Create figure
     fig, ax = plt.subplots()
 
     # Determine sizes
-    if args.size and args.size in df.columns:
-        # Normalize sizes for better visualization
-        sizes = df[args.size]
-        sizes = (sizes - sizes.min()) / (sizes.max() - sizes.min()) * 300 + 50
-    else:
-        sizes = 80
+    sizes = 80
+    if args.size:
+        # Normalize sizes for better visualization; a constant column keeps one size
+        raw = pd.to_numeric(df[args.size], errors="coerce")
+        spread = raw.max() - raw.min()
+        if pd.notna(spread) and spread > 0:
+            sizes = ((raw - raw.min()) / spread * 300 + 50).fillna(50)
 
     # Determine colors
     if args.color and args.color in df.columns:
@@ -113,15 +117,17 @@ def main():
 
     # Add trendline if requested
     if args.trendline:
-        x_vals = df[args.x].values
-        y_vals = df[args.y].values
+        x_vals = pd.to_numeric(df[args.x], errors="coerce").to_numpy(dtype=float)
+        y_vals = pd.to_numeric(df[args.y], errors="coerce").to_numpy(dtype=float)
 
         # Remove any NaN/inf for regression
         mask = np.isfinite(x_vals) & np.isfinite(y_vals)
         x_clean = x_vals[mask]
         y_clean = y_vals[mask]
 
-        if len(x_clean) > 2:
+        if len(x_clean) > 2 and np.ptp(x_clean) == 0:
+            print("Note: trendline skipped because every X value is the same", file=sys.stderr)
+        elif len(x_clean) > 2:
             slope, intercept, r_value, p_value, std_err = stats.linregress(x_clean, y_clean)
             line_x = np.linspace(x_clean.min(), x_clean.max(), 100)
             line_y = slope * line_x + intercept

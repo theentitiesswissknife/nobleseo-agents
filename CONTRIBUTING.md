@@ -13,10 +13,16 @@ Issues are welcome. Pull requests from outside the NobleSEO team are accepted fo
 
 1. Update `CHANGELOG.md` under a new version heading.
 2. Set the same `version` in `plugins/nobleseo/.claude-plugin/plugin.json`, `plugins/nobleseo/.codex-plugin/plugin.json` and `.claude-plugin/marketplace.json`.
-3. Run `python scripts/check_repo.py` and `python scripts/smoke_charts.py`.
+3. Run `python scripts/check_repo.py`, `python -m pytest` and `python scripts/smoke_charts.py`.
 4. Install from a fresh clone in Claude Code and in Codex and run each skill's eval prompt.
 5. Tag `vX.Y.Z` and publish a GitHub release with the changelog section.
 
 ## License changes
 
-Do not add a `LICENSE` file or a `license` field to any manifest. That happens only after written approval from the NobleSEO rights holder, recorded in `CHANGELOG.md` under a "License" heading in the same commit. CI enforces this.
+Do not add a `LICENSE` file (anywhere in the repository) or a `license` field (in any manifest). That happens only after written approval from the NobleSEO rights holder. Record the approval in `CHANGELOG.md`, in the same commit, as one line in exactly this form:
+
+```
+- License approved by the NobleSEO rights holder on YYYY-MM-DD: Apache-2.0
+```
+
+Until that line exists, CI fails on any license file or field, and on a README without the all-rights-reserved notice.

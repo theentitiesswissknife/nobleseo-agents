@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 charts/
 .tmp-install/
+.venv-pandas2/
+.pytest_cache/

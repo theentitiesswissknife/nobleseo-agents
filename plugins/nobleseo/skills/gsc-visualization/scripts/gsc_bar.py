@@ -11,7 +11,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from _gsc_data import load_table
+from _gsc_data import load_table, require_columns, require_rows
 
 COLORS = ["#2ecc71", "#3498db", "#e74c3c", "#9b59b6", "#f39c12", "#1abc9c"]
 
@@ -67,6 +67,8 @@ def main():
     if df.empty:
         print("Error: Empty dataset", file=sys.stderr)
         sys.exit(1)
+
+    require_columns(df, [args.x, args.y, args.color_by])
 
     # Sort and limit
     ascending = args.sort == "asc"
