@@ -10,7 +10,7 @@ Skills for AI coding assistants (Claude Code and Codex) from [NobleSEO](https://
 |---|---|---|
 | [`gsc-visualization`](plugins/nobleseo/skills/gsc-visualization/SKILL.md) | Turns Google Search Console and GA4 exports (CSV or JSON) into charts: trends, top queries and pages, device shares, position vs CTR, day-by-hour patterns, multi-metric comparisons. | Python 3.10+ with pandas, matplotlib, numpy, seaborn, scipy |
 
-**Planned:** a connection to the NobleSEO MCP server (research, keyword clustering and content briefs, signed in with your NobleSEO account), and more skills. They will appear in [CHANGELOG.md](CHANGELOG.md) when released. The MCP connection is not available yet.
+**Planned:** a connection to the NobleSEO MCP server (signed in with your NobleSEO account) and two skills built on it — `keyword-clustering` and `seo-content-briefing`. See [docs/roadmap.md](docs/roadmap.md). They are not available yet; released items appear in [CHANGELOG.md](CHANGELOG.md).
 
 ## Install
 

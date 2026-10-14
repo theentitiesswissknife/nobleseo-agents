@@ -4,6 +4,9 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+### Added
+- Roadmap for the NobleSEO MCP connection and the planned `keyword-clustering` and `seo-content-briefing` skills.
+
 ## [0.1.0] - 2026-10-15
 
 ### Added
