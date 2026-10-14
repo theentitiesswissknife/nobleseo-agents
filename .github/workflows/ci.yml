@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install chart requirements
+        run: python -m pip install pandas matplotlib numpy seaborn scipy
+      - name: Repository checks
+        run: python scripts/check_repo.py
+      - name: Chart smoke test
+        env:
+          MPLBACKEND: Agg
+        run: python scripts/smoke_charts.py charts
+      - name: Keep the smoke-test charts
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-charts
+          path: charts/

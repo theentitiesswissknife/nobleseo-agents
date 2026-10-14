@@ -1,0 +1,12 @@
+{
+  "name": "nobleseo",
+  "version": "0.1.0",
+  "description": "NobleSEO skills: charts for Google Search Console and GA4 data.",
+  "author": {
+    "name": "The Entities Swiss Knife",
+    "url": "https://github.com/theentitiesswissknife"
+  },
+  "homepage": "https://github.com/theentitiesswissknife/nobleseo-agents",
+  "repository": "https://github.com/theentitiesswissknife/nobleseo-agents",
+  "keywords": ["seo", "google-search-console", "ga4", "charts", "nobleseo"]
+}

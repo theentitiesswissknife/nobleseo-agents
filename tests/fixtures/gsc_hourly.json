@@ -1,0 +1,282 @@
+[
+ {
+  "day_of_week": "Mon",
+  "hour": 0,
+  "clicks": 32
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 3,
+  "clicks": 42
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 6,
+  "clicks": 46
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 9,
+  "clicks": 43
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 12,
+  "clicks": 34
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 15,
+  "clicks": 23
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 18,
+  "clicks": 17
+ },
+ {
+  "day_of_week": "Mon",
+  "hour": 21,
+  "clicks": 19
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 0,
+  "clicks": 32
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 3,
+  "clicks": 42
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 6,
+  "clicks": 46
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 9,
+  "clicks": 43
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 12,
+  "clicks": 34
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 15,
+  "clicks": 23
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 18,
+  "clicks": 17
+ },
+ {
+  "day_of_week": "Tue",
+  "hour": 21,
+  "clicks": 19
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 0,
+  "clicks": 32
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 3,
+  "clicks": 42
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 6,
+  "clicks": 46
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 9,
+  "clicks": 43
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 12,
+  "clicks": 34
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 15,
+  "clicks": 23
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 18,
+  "clicks": 17
+ },
+ {
+  "day_of_week": "Wed",
+  "hour": 21,
+  "clicks": 19
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 0,
+  "clicks": 32
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 3,
+  "clicks": 42
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 6,
+  "clicks": 46
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 9,
+  "clicks": 43
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 12,
+  "clicks": 34
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 15,
+  "clicks": 23
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 18,
+  "clicks": 17
+ },
+ {
+  "day_of_week": "Thu",
+  "hour": 21,
+  "clicks": 19
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 0,
+  "clicks": 32
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 3,
+  "clicks": 42
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 6,
+  "clicks": 46
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 9,
+  "clicks": 43
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 12,
+  "clicks": 34
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 15,
+  "clicks": 23
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 18,
+  "clicks": 17
+ },
+ {
+  "day_of_week": "Fri",
+  "hour": 21,
+  "clicks": 19
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 0,
+  "clicks": 25
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 3,
+  "clicks": 35
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 6,
+  "clicks": 39
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 9,
+  "clicks": 36
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 12,
+  "clicks": 27
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 15,
+  "clicks": 16
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 18,
+  "clicks": 10
+ },
+ {
+  "day_of_week": "Sat",
+  "hour": 21,
+  "clicks": 12
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 0,
+  "clicks": 25
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 3,
+  "clicks": 35
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 6,
+  "clicks": 39
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 9,
+  "clicks": 36
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 12,
+  "clicks": 27
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 15,
+  "clicks": 16
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 18,
+  "clicks": 10
+ },
+ {
+  "day_of_week": "Sun",
+  "hour": 21,
+  "clicks": 12
+ }
+]

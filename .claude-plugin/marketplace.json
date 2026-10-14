@@ -1,0 +1,18 @@
+{
+  "name": "nobleseo-agents",
+  "owner": {
+    "name": "The Entities Swiss Knife",
+    "url": "https://github.com/theentitiesswissknife"
+  },
+  "metadata": {
+    "description": "NobleSEO skills for Claude Code.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "nobleseo",
+      "source": "./plugins/nobleseo",
+      "description": "Charts for Google Search Console and GA4 data. The NobleSEO MCP connection will be added when it launches."
+    }
+  ]
+}
