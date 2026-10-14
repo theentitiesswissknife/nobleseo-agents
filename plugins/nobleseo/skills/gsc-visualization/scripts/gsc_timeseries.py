@@ -99,7 +99,7 @@ def main():
         )
 
         # Annotate peaks if requested
-        if args.annotate_peaks and len(df) > 2:
+        if args.annotate_peaks and df[col].notna().sum() > 2:
             max_idx = df[col].idxmax()
             min_idx = df[col].idxmin()
 

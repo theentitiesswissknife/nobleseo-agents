@@ -39,6 +39,8 @@ def parse_args():
     parser.add_argument("--title", required=True, help="Chart title")
     parser.add_argument("--output", required=True, help="Output file path")
     parser.add_argument("--cmap", default="YlOrRd", help="Color map name")
+    parser.add_argument("--agg", choices=["sum", "mean"], default="sum",
+                        help="How to combine rows that share a cell: sum for clicks/impressions, mean for CTR/position")
     parser.add_argument("--annotate", action="store_true", help="Show values in cells")
     return parser.parse_args()
 
@@ -63,7 +65,7 @@ def main():
     # Pivot data for heatmap
     try:
         pivot_df = df.pivot_table(
-            index=args.y, columns=args.x, values=args.value, aggfunc="sum", fill_value=0
+            index=args.y, columns=args.x, values=args.value, aggfunc=args.agg, fill_value=0
         )
     except Exception as e:
         print(f"Error pivoting data: {e}", file=sys.stderr)
@@ -84,7 +86,7 @@ def main():
     sns.heatmap(
         pivot_df,
         annot=args.annotate,
-        fmt=".0f",
+        fmt=".0f" if (pivot_df.fillna(0) % 1 == 0).all().all() else ".1f",
         cmap=args.cmap,
         linewidths=0.5,
         linecolor="white",

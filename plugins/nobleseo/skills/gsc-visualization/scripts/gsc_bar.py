@@ -91,7 +91,9 @@ def main():
 
     if args.horizontal:
         # Horizontal bar chart (better for long labels)
-        bars = ax.barh(df["_label"], df[args.y], color=colors, edgecolor="white", linewidth=0.5)
+        positions = range(len(df))
+        bars = ax.barh(positions, df[args.y], color=colors, edgecolor="white", linewidth=0.5)
+        ax.set_yticks(list(positions), df["_label"])
         ax.set_xlabel(args.y.replace("_", " ").title())
         ax.set_ylabel("")
         ax.invert_yaxis()  # Highest at top
@@ -108,7 +110,9 @@ def main():
             )
     else:
         # Vertical bar chart
-        bars = ax.bar(df["_label"], df[args.y], color=colors, edgecolor="white", linewidth=0.5)
+        positions = range(len(df))
+        bars = ax.bar(positions, df[args.y], color=colors, edgecolor="white", linewidth=0.5)
+        ax.set_xticks(list(positions), df["_label"])
         ax.set_ylabel(args.y.replace("_", " ").title())
         ax.set_xlabel("")
         plt.xticks(rotation=45, ha="right")

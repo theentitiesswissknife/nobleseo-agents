@@ -82,6 +82,10 @@ def main():
     # Prepare data
     labels = df[args.labels].astype(str).tolist()
     values = df[args.values].tolist()
+    numeric = pd.to_numeric(df[args.values], errors="coerce")
+    if numeric.isna().any() or (numeric < 0).any() or not numeric.sum() > 0:
+        print(f"Error: '{args.values}' must hold non-negative numbers with a total above zero", file=sys.stderr)
+        sys.exit(1)
 
     # Prepare explode array
     explode = [0] * len(values)

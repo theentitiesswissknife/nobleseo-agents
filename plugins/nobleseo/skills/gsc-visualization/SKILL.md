@@ -75,6 +75,8 @@ python scripts/gsc_bar.py --data queries.csv --x "Top queries" --y Clicks --hori
 - `--explode N` (0-based slice index);
 - `--threshold P` (group slices under P % as "Other").
 
+Values must be non-negative with a total above zero.
+
 ```bash
 python scripts/gsc_pie.py --data devices.csv --labels Device --values Clicks --donut --threshold 3 --title "Clicks by device" --output charts/devices.png
 ```
@@ -83,7 +85,7 @@ python scripts/gsc_pie.py --data devices.csv --labels Device --values Clicks --d
 
 `--x` and `--y`; optional:
 - `--size` (bubble size column);
-- `--color` (category column);
+- `--color` (category column; rows without a category are shown as "(missing)");
 - `--trendline`;
 - `--invert-x` / `--invert-y` (use `--invert-x` when `Position` is on the X axis so that position 1 is on the right).
 
@@ -95,7 +97,8 @@ python scripts/gsc_scatter.py --data queries.csv --x Position --y CTR --size Imp
 
 `--x` (columns), `--y` (rows) and `--value`; optional:
 - `--cmap` (default `YlOrRd`);
-- `--annotate` (print values in cells).
+- `--annotate` (print values in cells);
+- `--agg sum|mean` (default `sum`) for rows that share a cell: use `sum` for clicks and impressions, `mean` for CTR and position, which must never be added up.
 
 ```bash
 python scripts/gsc_heatmap.py --data hourly.json --x day_of_week --y hour --value clicks --annotate --title "Clicks by day and hour" --output charts/heatmap.png
@@ -113,7 +116,7 @@ python scripts/gsc_comparison.py --data daily.csv --x Date --metrics Clicks Impr
 
 ## Style
 
-Charts are 12 × 6 inches at 150 DPI with a white background, light grid and a consistent colour palette, ready for reports and slides. Keep titles short and say what period the data covers.
+Charts are saved at 150 DPI (time series, bar and comparison 12 × 6 inches; pie and scatter 10 × 8; heatmap 12 × 8) with a white background, light grid and a consistent colour palette, ready for reports and slides. Keep titles short and say what period the data covers.
 
 ## Errors
 

@@ -86,6 +86,8 @@ def main():
 
     # Determine colors
     if args.color and args.color in df.columns:
+        # Rows without a category are plotted as their own group, never dropped
+        df[args.color] = df[args.color].astype(object).where(df[args.color].notna(), "(missing)")
         categories = df[args.color].unique()
         color_map = {cat: COLORS[i % len(COLORS)] for i, cat in enumerate(categories)}
         colors = df[args.color].map(color_map)

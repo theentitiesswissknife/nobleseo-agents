@@ -91,3 +91,9 @@ def test_content_scan(repo, text, flagged):
     (repo / "docs" / "note.md").write_text(text, encoding="utf-8")
     hit = any("note.md" in e for e in errors(repo))
     assert hit is flagged
+
+
+@pytest.mark.parametrize("name", ["docs/snippet.js", "scripts/run.sh", "docs/page.html"])
+def test_secrets_in_any_text_file_are_found(repo, name):
+    (repo / name).write_text("const token = 'ghp_" + "b" * 30 + "'", encoding="utf-8")
+    assert any(Path(name).name in e and "secret-like token" in e for e in errors(repo))

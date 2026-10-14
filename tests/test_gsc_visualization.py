@@ -104,3 +104,86 @@ def test_comparison_numeric_x_and_stacked_normalized(tmp_path):
                          "--normalize", "--stacked", tmp_path=tmp_path)
     assert result.returncode == 0, result.stderr
     assert output.exists()
+
+
+def render(monkeypatch, tmp_path, script, *args):
+    """Run a chart script in-process and return the figure it saves."""
+    import runpy
+
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    captured = {}
+    monkeypatch.setattr(plt, "savefig", lambda *a, **k: captured.setdefault("fig", plt.gcf()))
+    monkeypatch.setattr(sys, "argv", [script, *args, "--title", "t", "--output", str(tmp_path / "chart.png")])
+    runpy.run_path(str(SCRIPTS / script), run_name="__main__")
+    return captured["fig"]
+
+
+def test_bar_labels_sharing_a_prefix_keep_separate_bars(monkeypatch, tmp_path):
+    path = tmp_path / "pages.csv"
+    prefix = "https://www.example.org/blog/category/a-very-long-path/"
+    path.write_text(f"Page,Clicks\n{prefix}one,30\n{prefix}two,20\n{prefix}three,10\n", encoding="utf-8")
+    for orientation in ([], ["--horizontal"]):
+        fig = render(monkeypatch, tmp_path, "gsc_bar.py", "--data", str(path), "--x", "Page", "--y", "Clicks", *orientation)
+        ax = fig.axes[0]
+        coords = [p.get_y() if orientation else p.get_x() for p in ax.patches]
+        assert len(set(coords)) == 3
+
+
+def test_comparison_keeps_numeric_x_and_fits_the_stack(monkeypatch, tmp_path):
+    path = tmp_path / "hours.csv"
+    path.write_text("hour,a,b\n0,1,4\n1,2,3\n2,3,2\n", encoding="utf-8")
+    fig = render(monkeypatch, tmp_path, "gsc_comparison.py", "--data", str(path), "--x", "hour",
+                 "--metrics", "a", "b", "--normalize", "--stacked")
+    ax = fig.axes[0]
+    assert ax.get_ylim()[1] >= 200
+    assert ax.get_xlim()[1] < 10  # hours stay small numbers, not epoch dates
+
+
+def test_smoothing_uses_calendar_days(monkeypatch, tmp_path):
+    path = tmp_path / "gaps.csv"
+    # 1 Jan and 20 Jan are 19 days apart: a 7-day window must not average them together
+    path.write_text("Date,Clicks\n2026-01-01,10\n2026-01-20,100\n2026-01-21,200\n", encoding="utf-8")
+    fig = render(monkeypatch, tmp_path, "gsc_timeseries.py", "--data", str(path), "--x", "Date", "--y", "Clicks", "--smooth")
+    values = list(fig.axes[0].lines[0].get_ydata())
+    assert values == [10, 100, 150]
+
+
+def test_scatter_keeps_rows_without_a_category(monkeypatch, tmp_path):
+    path = tmp_path / "rows.csv"
+    path.write_text("Position,CTR,Device\n1,10,Mobile\n2,8,Desktop\n3,6,\n", encoding="utf-8")
+    fig = render(monkeypatch, tmp_path, "gsc_scatter.py", "--data", str(path), "--x", "Position", "--y", "CTR", "--color", "Device")
+    plotted = sum(len(collection.get_offsets()) for collection in fig.axes[0].collections)
+    assert plotted == 3
+
+
+def test_heatmap_mean_does_not_add_rates(monkeypatch, tmp_path):
+    path = tmp_path / "ctr.csv"
+    path.write_text("device,country,ctr\nMobile,IT,5%\nMobile,IT,10%\n", encoding="utf-8")
+    result, _ = run("gsc_heatmap.py", "--data", str(path), "--x", "device", "--y", "country", "--value", "ctr",
+                    "--agg", "mean", "--annotate", tmp_path=tmp_path)
+    assert result.returncode == 0, result.stderr
+    fig = render(monkeypatch, tmp_path, "gsc_heatmap.py", "--data", str(path), "--x", "device", "--y", "country",
+                 "--value", "ctr", "--agg", "mean", "--annotate")
+    assert [t.get_text() for t in fig.axes[0].texts] == ["7.5"]
+
+
+def test_pie_with_zero_total_is_a_clear_error(tmp_path):
+    path = tmp_path / "zero.csv"
+    path.write_text("Device,Clicks\nMobile,0\nDesktop,0\n", encoding="utf-8")
+    result, output = run("gsc_pie.py", "--data", str(path), "--labels", "Device", "--values", "Clicks", tmp_path=tmp_path)
+    assert result.returncode == 1
+    assert "total above zero" in result.stderr
+    assert not output.exists()
+
+
+def test_peak_annotation_skips_an_empty_metric(tmp_path):
+    path = tmp_path / "empty.json"
+    path.write_text(json.dumps([{"Date": f"2026-01-0{d}", "CTR": None, "Clicks": d} for d in (1, 2, 3)]), encoding="utf-8")
+    result, output = run("gsc_timeseries.py", "--data", str(path), "--x", "Date", "--y", "Clicks", "CTR",
+                         "--annotate-peaks", tmp_path=tmp_path)
+    assert result.returncode == 0, result.stderr
+    assert output.exists()

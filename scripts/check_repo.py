@@ -33,7 +33,7 @@ FORBIDDEN = {
         r"|xox[abpr]-[A-Za-z0-9-]{10,}|AIza[0-9A-Za-z_-]{35}|-----BEGIN [A-Z ]*PRIVATE KEY-----)"
     ),
 }
-TEXT_SUFFIXES = {".md", ".py", ".json", ".csv", ".yml", ".yaml", ".txt", ".toml", ".cfg", ".ini", ""}
+BINARY_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".pdf", ".zip", ".gz", ".woff", ".woff2", ".ttf"}
 
 
 class Checker:
@@ -125,9 +125,12 @@ class Checker:
             if SENSITIVE_NAMES.match(path.name):
                 self.fail(f"{rel}: sensitive file must not be published")
                 continue
-            if path.suffix.lower() not in TEXT_SUFFIXES or not path.is_file():
+            if path.suffix.lower() in BINARY_SUFFIXES or not path.is_file():
                 continue
-            text = path.read_text(encoding="utf-8", errors="replace")
+            data = path.read_bytes()
+            if b"\x00" in data[:8192]:
+                continue  # binary content under a text-looking name
+            text = data.decode("utf-8", errors="replace")
             for label, pattern in FORBIDDEN.items():
                 for hit in pattern.finditer(text):
                     line = text.count("\n", 0, hit.start()) + 1
