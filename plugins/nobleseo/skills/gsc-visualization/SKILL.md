@@ -75,7 +75,7 @@ python scripts/gsc_bar.py --data queries.csv --x "Top queries" --y Clicks --hori
 - `--explode N` (0-based slice index);
 - `--threshold P` (group slices under P % as "Other").
 
-Values must be non-negative with a total above zero.
+Values must be non-negative with a total above zero. Rows without a label are shown as a "(missing)" slice.
 
 ```bash
 python scripts/gsc_pie.py --data devices.csv --labels Device --values Clicks --donut --threshold 3 --title "Clicks by device" --output charts/devices.png
@@ -98,7 +98,9 @@ python scripts/gsc_scatter.py --data queries.csv --x Position --y CTR --size Imp
 `--x` (columns), `--y` (rows) and `--value`; optional:
 - `--cmap` (default `YlOrRd`);
 - `--annotate` (print values in cells);
-- `--agg sum|mean` (default `sum`) for rows that share a cell: use `sum` for clicks and impressions, `mean` for CTR and position, which must never be added up.
+- `--agg sum|mean` (default `sum`) for rows that share a cell. Use `sum` for clicks and impressions. `mean` is a plain, unweighted average of rows; cells with no rows stay empty.
+
+  CTR and position must never be summed, and a plain average of them is usually wrong too. Before charting them, aggregate the data per cell: CTR = total clicks ÷ total impressions × 100, and position = impressions-weighted average of position. Save that table and chart it.
 
 ```bash
 python scripts/gsc_heatmap.py --data hourly.json --x day_of_week --y hour --value clicks --annotate --title "Clicks by day and hour" --output charts/heatmap.png

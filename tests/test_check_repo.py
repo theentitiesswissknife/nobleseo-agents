@@ -97,3 +97,13 @@ def test_content_scan(repo, text, flagged):
 def test_secrets_in_any_text_file_are_found(repo, name):
     (repo / name).write_text("const token = 'ghp_" + "b" * 30 + "'", encoding="utf-8")
     assert any(Path(name).name in e and "secret-like token" in e for e in errors(repo))
+
+
+def test_utf16_text_is_still_scanned(repo):
+    (repo / "docs" / "notes.txt").write_bytes(("token ghp_" + "c" * 30).encode("utf-16"))
+    assert any("notes.txt" in e and "secret-like token" in e for e in errors(repo))
+
+
+def test_nul_bytes_without_a_bom_are_rejected(repo):
+    (repo / "docs" / "odd.md").write_bytes(b"a\x00b")
+    assert any("odd.md" in e and "unsupported text encoding" in e for e in errors(repo))

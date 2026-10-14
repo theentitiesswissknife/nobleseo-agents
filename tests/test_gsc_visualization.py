@@ -187,3 +187,29 @@ def test_peak_annotation_skips_an_empty_metric(tmp_path):
                          "--annotate-peaks", tmp_path=tmp_path)
     assert result.returncode == 0, result.stderr
     assert output.exists()
+
+
+def test_pie_keeps_rows_without_a_label(monkeypatch, tmp_path):
+    path = tmp_path / "devices.csv"
+    path.write_text("Device,Clicks\nMobile,10\n,90\n", encoding="utf-8")
+    fig = render(monkeypatch, tmp_path, "gsc_pie.py", "--data", str(path), "--labels", "Device", "--values", "Clicks")
+    labels = sorted(t.get_text() for t in fig.axes[0].texts if t.get_text() in {"Mobile", "(missing)"})
+    assert labels == ["(missing)", "Mobile"]
+
+
+def test_heatmap_mean_leaves_absent_cells_empty(monkeypatch, tmp_path):
+    path = tmp_path / "pos.csv"
+    path.write_text("device,country,position\nMobile,US,5\nDesktop,GB,10\n", encoding="utf-8")
+    fig = render(monkeypatch, tmp_path, "gsc_heatmap.py", "--data", str(path), "--x", "device", "--y", "country",
+                 "--value", "position", "--agg", "mean", "--annotate")
+    assert sorted(t.get_text() for t in fig.axes[0].texts) == ["10", "5"]
+
+
+def test_heatmap_without_usable_cells_is_a_clear_error(tmp_path):
+    path = tmp_path / "blank.csv"
+    path.write_text("device,country,clicks\n,,5\n,,6\n", encoding="utf-8")
+    result, output = run("gsc_heatmap.py", "--data", str(path), "--x", "device", "--y", "country", "--value", "clicks",
+                         tmp_path=tmp_path)
+    assert result.returncode == 1
+    assert "no rows" in result.stderr
+    assert not output.exists()

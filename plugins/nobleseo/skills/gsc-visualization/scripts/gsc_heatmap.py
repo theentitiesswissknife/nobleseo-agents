@@ -65,11 +65,15 @@ def main():
     # Pivot data for heatmap
     try:
         pivot_df = df.pivot_table(
-            index=args.y, columns=args.x, values=args.value, aggfunc=args.agg, fill_value=0
+            # Sums may treat an absent combination as zero; an average must stay empty there
+            index=args.y, columns=args.x, values=args.value, aggfunc=args.agg,
+            fill_value=0 if args.agg == "sum" else None,
         )
     except Exception as e:
         print(f"Error pivoting data: {e}", file=sys.stderr)
         sys.exit(1)
+
+    require_rows(pivot_df.dropna(how="all"), f"no rows with both '{args.x}' and '{args.y}'")
 
     # Order weekday names or abbreviations Monday→Sunday, whichever axis holds them
     columns_order = weekday_order(pivot_df.columns)

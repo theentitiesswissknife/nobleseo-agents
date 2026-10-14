@@ -63,6 +63,8 @@ def main():
     require_columns(df, [args.labels, args.values])
 
     # Aggregate by label if needed
+    # Rows without a label are kept as their own slice so the total stays honest
+    df[args.labels] = df[args.labels].astype(object).where(df[args.labels].notna(), "(missing)")
     df = df.groupby(args.labels)[args.values].sum().reset_index()
     df = df.sort_values(args.values, ascending=False)
 

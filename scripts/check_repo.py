@@ -127,10 +127,10 @@ class Checker:
                 continue
             if path.suffix.lower() in BINARY_SUFFIXES or not path.is_file():
                 continue
-            data = path.read_bytes()
-            if b"\x00" in data[:8192]:
-                continue  # binary content under a text-looking name
-            text = data.decode("utf-8", errors="replace")
+            text = _decode(path.read_bytes())
+            if text is None:
+                self.fail(f"{rel}: binary or unsupported text encoding; publish text as UTF-8")
+                continue
             for label, pattern in FORBIDDEN.items():
                 for hit in pattern.finditer(text):
                     line = text.count("\n", 0, hit.start()) + 1
@@ -151,6 +151,25 @@ class Checker:
         self.check_license_gate(manifests, files)
         self.scan_content(files)
         return self.errors
+
+
+_BOMS = (
+    (b"\xef\xbb\xbf", "utf-8-sig"),
+    (b"\xff\xfe\x00\x00", "utf-32"),
+    (b"\x00\x00\xfe\xff", "utf-32"),
+    (b"\xff\xfe", "utf-16"),
+    (b"\xfe\xff", "utf-16"),
+)
+
+
+def _decode(data: bytes) -> str | None:
+    """Text of a file: Unicode BOMs are honoured; anything else with NUL bytes is not scannable."""
+    for bom, encoding in _BOMS:
+        if data.startswith(bom):
+            return data.decode(encoding, errors="replace")
+    if b"\x00" in data:
+        return None
+    return data.decode("utf-8", errors="replace")
 
 
 def _license_keys(value: object, path: str = "$") -> list[str]:
