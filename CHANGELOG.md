@@ -4,6 +4,10 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Add `editorial-coverage-planning` for selected article/topic projections and authorized covering-content lookup, with read-only and missing-capability fallbacks.
+- Add conditional article inspection, fixed-reference scoring, requested draft edits and selected-field history restoration guidance in `article-optimization-review`.
+- Extend briefing with optional effective-context/document/grounding discovery. Article and knowledge capabilities require separately deployed tools and fresh scope consent; native-client acceptance remains pending.
+
 ## [0.2.0] - 2026-10-28
 
 ### Added

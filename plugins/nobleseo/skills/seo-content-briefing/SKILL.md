@@ -15,6 +15,8 @@ Read `get_context` and `list_projects` to resolve the requested project and perm
 
 Read an existing stored brief with `brief_get`. If it returns `BRIEF_NOT_PREPARED`, do not treat that as proof that research is missing. A local synthesis of available evidence can still satisfy a read-only request.
 
+For a knowledge-grounded brief, first discover `knowledge_get_context`, `knowledge_list_documents` and `knowledge_get_grounding`. They require separate `knowledge.read` consent and may be unavailable on an older server. Resolve effective voice through the context tool rather than recreating inheritance yourself. Distinguish project documents, this article's overlay, authority/readiness and the source record of an earlier generation. Follow document pagination and preserve the project/article binding. Keep private filenames, excerpts and internal URLs out of publishable prose. Missing or disabled grounding does not authorize crawling, ingestion or embedding. If these tools are absent, use only already authorized visible evidence and state the limitation.
+
 When the user asks to create a stored brief, call `brief_prepare` using a stable UUID `request_id`, project and exactly one source: `keyword`, `content_id`, or `cluster_id` together with `run_id`. Set the intended market/language for a new context. This persists a context/brief but does not launch research or generate an article. Do not prepare a new object for a request limited to inspecting existing data. Without write permission, offer a local brief from visible evidence and label it as a local synthesis.
 
 ## Research only when needed and requested
