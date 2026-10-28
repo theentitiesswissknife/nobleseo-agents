@@ -30,4 +30,4 @@ Ask for a chart and name your data file. The `gsc-visualization` skill needs Pyt
 
 Configure the [NobleSEO MCP connection](mcp-connection.md) for keyword clustering and content briefs, or reuse your existing connection. Installing skills does not grant project access or additional permissions.
 
-Ask to use `keyword-clustering` to review an existing run, `seo-content-briefing` to prepare a brief from existing evidence, or `gsc-performance-review` to diagnose GSC exports. New clustering/research needs a browser-approved preview; GSC retrieval needs a separate available connector.
+Ask to use `keyword-clustering` to review an existing run, `seo-content-briefing` to prepare a brief from existing evidence, or `gsc-performance-review` to diagnose GSC exports. New clustering/research needs a browser-approved preview; GSC review uses exports or discovered Analytics tools on a deployment that supports `analytics.read`; installing the skill does not enable the server increment.

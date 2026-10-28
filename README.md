@@ -13,7 +13,7 @@ Skills for AI coding assistants (Claude Code and Codex) from [NobleSEO](https://
 | [`keyword-clustering`](plugins/nobleseo/skills/keyword-clustering/SKILL.md) | Reviews clusters, hubs and domain coverage; exports results or runs approved clustering. | NobleSEO Research MCP, `read`, plus `clusterizer.run` for new runs |
 | [`seo-content-briefing`](plugins/nobleseo/skills/seo-content-briefing/SKILL.md) | Turns existing SERP/AI evidence and recommendations into a writer brief; optionally prepares a stored brief or runs approved research. | NobleSEO Research MCP; permissions depend on reading, writing or research |
 
-The Research MCP offers clustering, research and brief tools. It does **not** provide GSC or GA4 retrieval tools in the current catalogue. Installing this plugin adds workflow guidance, not permissions or an automatic Google connection. See [MCP setup](docs/mcp-connection.md), [roadmap](docs/roadmap.md) and [changelog](CHANGELOG.md).
+The original Research MCP offers clustering, research and brief tools. This candidate also supports an optional Analytics server increment for persisted GSC query/page reports and CTR opportunities. It requires deployed tools and an explicit `analytics.read` grant; GA4 retrieval is not included. Installing this plugin adds workflow guidance, not permissions or an automatic Google connection. See [MCP setup](docs/mcp-connection.md), [roadmap](docs/roadmap.md) and [changelog](CHANGELOG.md).
 
 ## Install
 

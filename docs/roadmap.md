@@ -12,7 +12,7 @@ Automatic MCP connection packaging remains separate from skill installation. Set
 
 ## Future capabilities
 
-- Direct GSC/GA4 retrieval needs actual public tools and access controls before a skill can use it. Current GSC skills do not claim this capability.
+- The local Analytics server increment adds five bounded GSC query/page read tools under `analytics.read`. The GSC review skill has a capability-detected path for them; deployment and fresh consent are separate acceptance gates. Complete property totals, content-decay adapters and GA4 remain future work.
 - Internal-link review needs a public read tool before it can be offered as an MCP workflow.
 - Publication needs explicit supported tools and separate authorization; it is outside these research skills.
 

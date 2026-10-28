@@ -7,7 +7,19 @@ description: Diagnose Google Search Console performance changes and prioritize e
 
 ## Requirements
 
-GSC CSV/JSON exports or an already connected tool that exposes the required GSC data. This skill does not connect a Google account or add a GSC API. NobleSEO's Research MCP tools for clustering, research and briefs are not a GSC data connector. For larger tables use an available local analysis runtime; the optional `gsc-visualization` skill supplies chart scripts and lists their dependencies.
+GSC CSV/JSON exports or an already connected tool that exposes the required GSC data. Discover the available MCP tools before choosing a path: installing this skill does not deploy server tools, connect Google, or extend an OAuth grant. For larger tables use an available local analysis runtime; the optional `gsc-visualization` skill supplies chart scripts and lists their dependencies.
+
+## NobleSEO Analytics path (when available)
+
+The Analytics server increment requires an explicitly granted `analytics.read` scope. Earlier Research MCP deployments expose clustering, research and briefs only. If the tools below are absent, use supplied exports or another authorized connector; do not call invented tools or claim that reinstalling the skill enables analytics.
+
+1. Select an authorized project and call `analytics_get_project_site`. The server resolves the property and any project section; do not substitute a broader property.
+2. Choose explicit past dates, at most 90 days, and call `analytics_get_data_status`. `observed_days` describes rows seen, not verified ingestion completeness. `no_observed_data` is not evidence of zero traffic.
+3. Call `analytics_report_query_performance` with `dimension` set to `page`, `query`, `page_query` or `date`. Retain the exact page/query filters and follow every `next_cursor`. These are persisted web-search query/page rows, not whole-property totals or live Google data. This increment does not expose device, country, GA4 or conversion reports.
+4. For changes, call `analytics_compare_query_performance` with equal-length, non-overlapping earlier comparison dates and a page/query dimension. A missing group stays unknown; zero-baseline percent change stays null. CTR is a ratio, and its delta multiplied by 100 is percentage points. Positive position delta means worse ranking.
+5. Optionally use `analytics_find_ctr_opportunities`. Preserve its method, population and thresholds. Its existing detector uses position-bucket medians with a fixed fallback for sparse buckets; the score is a prioritization heuristic, not a forecast or measured causal effect. Rows missing required metrics are excluded and counted.
+
+If the server returns `ANALYTICS_WINDOW_TOO_LARGE_NARROW_FILTERS`, narrow the dates or exact page/query; do not retry the same request with a smaller output page and assume that fixes source size. If a cursor snapshot changes, restart the same report and discard the earlier partial result. If data is unavailable, report that limitation without silently fetching live Google data or starting a backfill.
 
 ## Establish what can be compared
 

@@ -53,6 +53,16 @@ Run `/mcp` inside Claude Code and complete browser authentication, choosing the 
 
 `APPROVAL_REQUIRED` means browser approval has not been accepted. Unknown cost is not a free run. Missing tools can reflect missing scope, disabled capability or an unavailable deployment; report the actual response instead of bypassing it.
 
-GSC analysis needs exports or a separate available GSC connector. The Research MCP does not retrieve GSC/GA4 reports.
+## Optional Analytics increment
+
+The original Research MCP catalogue does not retrieve GSC reports. A separate server increment adds five project-scoped Analytics tools for persisted web-search query/page data. This plugin candidate supports that increment but does not deploy it.
+
+Only after your team confirms deployment and adds `analytics.read` to the registered client's allowed scopes, authorize it through a fresh consent flow:
+
+```bash
+codex mcp login nobleseo --scopes read,analytics.read
+```
+
+Verify that `analytics_get_project_site`, `analytics_get_data_status`, `analytics_report_query_performance`, `analytics_compare_query_performance` and `analytics_find_ctr_opportunities` appear. Old `read` grants do not include them. Select only authorized projects. These reports are privacy-filtered query/page observations, not complete property totals, GA4 reports or a live Google connection. If absent, use supplied exports or another authorized connector.
 
 References: [Codex MCP](https://learn.chatgpt.com/docs/extend/mcp) and [Claude Code MCP](https://code.claude.com/docs/en/mcp).

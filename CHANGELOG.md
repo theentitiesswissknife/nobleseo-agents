@@ -13,7 +13,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 - Synthetic behavioral evaluations and MCP setup instructions for Codex and Claude Code.
 
 ### Clarified
-- Skill installation and the authenticated MCP connection are separate. Research MCP has clustering/research/brief tools, not GSC/GA4 retrieval tools.
+- Skill installation and the authenticated MCP connection are separate. The GSC review skill discovers the optional Analytics increment and uses its five read tools only when deployed and granted through `analytics.read`; exports remain supported. GA4 retrieval is not included.
 - The former roadmap's larger keyword limit was not a supported contract. Skills inspect the live schema and never silently truncate or batch inputs.
 - Privacy documentation covers MCP requests, stored changes and provider-backed work.
 
