@@ -49,6 +49,10 @@ An active edit lease requires waiting for its owner or returning the proposal; n
 
 Use `content_get_history` and `content_get_revision` to inspect stored versions. A requested restore uses `content_restore_revision`, the exact selected fields, the current expected revision and a stable request ID. It creates a new history entry; do not assume every historical field is available. Inspect the resulting revision before reporting success.
 
+For a requested import, discover `content_preview_import`, `content_get_import_preview` and `content_apply_import`. Intake performs an external read and persists a staged preview; it does not replace the draft. Use only the exact URL already saved on the selected article, the reviewed revision and a stable request ID. Arbitrary URLs, local paths and unrestricted WordPress browsing are unavailable. Companion source access retains its stricter editor requirement. This intake has no paid unlocker fallback; a blocked page needs an explicitly qualified alternative.
+
+Review the complete staged body, imported fields, warnings, source digest and expiry. Applying replaces the article body and may fill empty SEO fields; explain `overwrite_seo` separately and enable it only when requested. Use the exact preview ID, source digest, base revision and a distinct stable apply request ID. An active editor lease, changed draft/source binding, expired preview or lost grant prevents application. Do not refetch on a read or turn an uncertain intake outcome into an automatic retry. A replay uses the existing request ID and receipt; a superseded/expired preview requires an explicitly requested new intake. Retain the new canonical article revision and distinguish the saved import from publication.
+
 Supported `content_export` formats come from discovery and bind the current revision. Keep exports and local proposals separate from the stored article. Saving, exporting and restoring do not authorize publication, external delivery or provider work.
 
 ## Report the outcome
