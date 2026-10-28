@@ -9,6 +9,8 @@ description: Inspect a NobleSEO article, explain its stored guidelines, score a 
 
 A connected NobleSEO MCP server with the discovered article tools and an authorized project. `content.read` permits article inspection, guidelines, stored versions and supported exports. `content.score` permits deterministic draft scoring. `content.write` permits requested stored changes when canonical history is enabled. Optional `knowledge.read` permits effective context and permitted source provenance; `media.read` permits stored assets and social drafts. A plugin installation does not add these permissions or deploy these tools.
 
+Some evidence tools require both `content.read` and `knowledge.read`; discover each tool's complete `required_scopes`. `knowledge.write` separately permits requested article document selection when supported. An existing content grant does not imply access to private grounding, source policy or knowledge changes.
+
 ## Resolve the article and reference
 
 Discover `tools/list` and the capabilities resource first. Resolve the project through `get_context` and `list_projects`. Use `content_list` only within the selected project and follow every cursor before claiming a complete list. If the article tools are absent, use an authorized user-provided export for a local proposal and explain which stored operations are unavailable.
@@ -24,6 +26,20 @@ Explain the observed issue and propose a reviewable diff limited to the user's r
 When a usable frozen reference and `content.score` are available, score the original and proposed bodies with the identical reference ID and the appropriate title, H1 and description. Show component changes and material tradeoffs. A deterministic score is not external fact verification, model editorial review or a ranking guarantee. A changed/unavailable reference requires a fresh read and a new comparison, not an automatic research run. Scoring does not save the proposal.
 
 Optional `media_list_assets`, `media_get_asset`, `social_list_batches` and `social_get_batch` inspect existing artifacts only. Preserve derivative versions and ownership, follow pagination and report drafts as drafts. Do not trigger image generation, social generation, publication or delivery merely to inspect an article.
+
+## Inspect outline, sources and quality
+
+When discovered and granted, use `outline_get` for canonical article outline fields or stored version summaries. This is a separate artifact from a brief outline. Preserve its plan revision, background revision, binding hash, marks and stale notices; follow pagination. A requested `outline_update` uses those exact values and a stable request ID. Field edits preserve generated provenance; explicit replacement has different semantics. Do not accept an outline on the user's behalf without a requested review decision, and never treat acceptance as clearing source marks. Plan changes do not save an article body, regenerate an outline or authorize writing an article from it.
+
+Read `content_get_source_policy` to inspect permitted source switches and their canonical binding. For a requested change, use `content_preview_source_policy`, explain its counts and affected outline fields, then apply only selected switches through `content_update_source_policy` with the same current binding and a stable request ID. Applying source switches requires `content.write`, `knowledge.read` and `knowledge.write` together. A binding conflict requires a new preview. Do not infer that a preview started research or persisted a selection.
+
+For a requested article document selection, `knowledge_update_article_sources` accepts an exact bounded set of permitted ready document IDs and the source-policy binding. It changes article source switches, not document ownership or authority. It does not ingest, promote a document into project knowledge, turn on grounding, or prove that a previous generation used the selection. Preserve disabled/unavailable states and use the tool's receipt.
+
+Use `content_get_toc_grounding` for stored heading notes when authorized. Preserve unavailable-source and current/stale/unknown version labels. Missing private evidence is not permission to restore an excerpt from memory, fetch a source or generate replacement notes.
+
+`content_get_fact_presence` reads a stored presence/confirmation assessment. `content_get_quality_review` reads the supported editorial, rankability or source-verification mode. Keep assessment identity, current-draft binding, stale state, report date, expiry and uncertain outcomes. A stored result is not a fresh audit; draft-current does not establish source/reference freshness. A source-verification report differs from model editorial judgment and deterministic scoring. Do not request API keys in chat or start a new check through an undiscovered endpoint.
+
+`content_get_schema` returns a stored structured-data suggestion and the scan/state binding. A requested `content_update_schema` changes only selected options/entities under the state hash and current article revision. Omitted fields remain unchanged. Preserve existing generated JSON-LD unless a separately supported generation action was requested; changing selections does not regenerate or publish it. A stale scan requires a separately qualified acquisition/generation workflow, not an automatic rescan.
 
 ## Save only a requested change
 

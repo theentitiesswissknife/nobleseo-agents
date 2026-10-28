@@ -4,6 +4,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Extend article optimization with conditional canonical outline/source-policy edits, private grounding and stored quality modes, article document selection and schema-option changes. Each mode follows complete discovered scope requirements, current bindings and separate acquisition/publication gates.
 - Add `editorial-coverage-planning` for selected article/topic projections and authorized covering-content lookup, with read-only and missing-capability fallbacks.
 - Add conditional article inspection, fixed-reference scoring, requested draft edits and selected-field history restoration guidance in `article-optimization-review`.
 - Extend briefing with optional effective-context/document/grounding discovery. Article and knowledge capabilities require separately deployed tools and fresh scope consent; native-client acceptance remains pending.
