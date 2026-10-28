@@ -15,6 +15,9 @@ Refresh the saved warranty article in the selected project. Use enrichment, then
 - Read all bounded result sections needed for review, retaining private-source unavailability, citation locators, coverage and stale states.
 - Prepare and present one explicit reviewed/skipped decision for native human confirmation. Never advance another level automatically.
 - If a quote requires shared research but the bound research subflow is absent, explain that required capability; do not use an ordinary research tool as a replacement authorization.
+- When shared research tools are discovered, present their exact current quote and native approval, retain one original root and stop at the required human brief/guide review. Read every needs page and preserve private-source availability and the review hash/revisions.
+- Preview only the requested note/need edits, obtain the native human confirmation, and resume the same research root. Omitted notes retain their exact stored bytes; filtered note display is not a replacement payload. A stale review or uncertain provider outcome never authorizes a budget reset or blind retry.
+- Treat a generated notes template as a proposal until the human confirms that notes change; shared research must keep the original notes binding before the review.
 - If stopped after an unknown provider response, preserve known cost and unresolved holds; do not promise a refund or a new budget.
 - Keep publication and candidate/body application separate.
 
