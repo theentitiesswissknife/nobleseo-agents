@@ -1,6 +1,6 @@
 ---
 name: article-optimization-review
-description: Inspect a NobleSEO article, explain its stored guidelines, score a proposed revision against the same frozen reference, and save only requested changes with revision and edit-lease protection. Use for article optimization, draft review, version inspection and a requested local restore.
+description: Inspect a NobleSEO article, compare fixed-reference scores, save requested revisions, or guide an explicitly requested Refresh through exact cost approval and human review checkpoints. Use for article optimization, draft review, version inspection and local restoration.
 ---
 
 # Review and improve an article
@@ -10,6 +10,8 @@ description: Inspect a NobleSEO article, explain its stored guidelines, score a 
 A connected NobleSEO MCP server with the discovered article tools and an authorized project. `content.read` permits article inspection, guidelines, stored versions and supported exports. `content.score` permits deterministic draft scoring. `content.write` permits requested stored changes when canonical history is enabled. Optional `knowledge.read` permits effective context and permitted source provenance; `media.read` permits stored assets and social drafts. A plugin installation does not add these permissions or deploy these tools.
 
 Some evidence tools require both `content.read` and `knowledge.read`; discover each tool's complete `required_scopes`. `knowledge.write` separately permits requested article document selection when supported. An existing content grant does not imply access to private grounding, source policy or knowledge changes.
+
+Optional Refresh execution additionally requires `content.generate`, `content.write` and `knowledge.read`, with the current editor role and the server feature available. Its stored read requires `content.read`, `content.write` and `knowledge.read`. Explicit page-query acquisition also requires `analytics.read`. Existing grants do not acquire these scopes when the plugin updates; fresh consent may be needed.
 
 ## Resolve the article and reference
 
@@ -40,6 +42,26 @@ Use `content_get_toc_grounding` for stored heading notes when authorized. Preser
 `content_get_fact_presence` reads a stored presence/confirmation assessment. `content_get_quality_review` reads the supported editorial, rankability or source-verification mode. Keep assessment identity, current-draft binding, stale state, report date, expiry and uncertain outcomes. A stored result is not a fresh audit; draft-current does not establish source/reference freshness. A source-verification report differs from model editorial judgment and deterministic scoring. Do not request API keys in chat or start a new check through an undiscovered endpoint.
 
 `content_get_schema` returns a stored structured-data suggestion and the scan/state binding. A requested `content_update_schema` changes only selected options/entities under the state hash and current article revision. Omitted fields remain unchanged. Preserve existing generated JSON-LD unless a separately supported generation action was requested; changing selections does not regenerate or publish it. A stale scan requires a separately qualified acquisition/generation workflow, not an automatic rescan.
+
+## Guide an explicitly requested Refresh
+
+Discover the Refresh tools and their exact schemas/capabilities. This mode covers the selected saved article; it is not a general article-generation workflow. If generation or a required Refresh subflow is missing, explain the missing capability and preserve the local proposal. Do not manufacture an endpoint or use a different provider flow to bypass it.
+
+Read the saved article and `refresh_get` before preparing work. `refresh_prepare` persists the selected correct/enrich/expand levels using the exact saved body hash, current revision and stable request UUID. It neither imports a page nor changes the body. Preserve the run ID, binding version and binding hash. Read the bounded summary, jobs, quotes, candidates, headings, expansion pool or stored GSC snapshot as distinct sections and follow all cursors. Treat stale or unavailable sources as incomplete evidence; private excerpts, identities and URLs must not enter publishable text.
+
+`refresh_preview_level` persists a local quote. Explain the selected level, shared work, cost currency/type, worst-case provider cost, expiry, missing/unknown components and downstream effects. An unavailable/provisional cost never authorizes execution. Source-verification credentials use a qualified server connection; never request a key in chat. If the quote requires new shared research and a new level estimate afterward, stop at that missing qualified subflow unless the server separately discovers it. An ordinary research approval is not a substitute for the Refresh-bound shared budget and review contract.
+
+Only a ready level preview with an approval URL can proceed. Present that exact preview for approval in NobleSEO. Do not approve it through an agent-controlled browser or claim that a user's general request completes the browser cost confirmation. `refresh_start_level` accepts that approval ID for this article and starts one canonical job. There is no automatic body application, next-level execution or publication. Retain its immutable acceptance receipt separately from current job/dispatch status. A `not_admitted` receipt is a pre-queue refusal; use a new preview after resolving its cause, not a new UUID to revive the declined request.
+
+If the start response is lost, replay the same approval to recover its receipt and inspect `refresh_get`. Replaying acceptance does not requeue work. Only when dispatch remains pending should an explicitly requested `refresh_retry_dispatch` reconcile the same job identity. An uncertain provider outcome is not permission to start a second job or reset a budget. Revoked grants, changed article/project/source bindings, feature flags or entitlements require resolution through the owning product.
+
+Inspect supported candidate text, citation locators, coverage and uncertainty before a review decision. Missing private sources cannot be recovered from cached agent context. Candidate dismissal uses the exact run binding and stable request UUID. Applying notes, inserting headings or editing the article requires its separately discovered canonical write flow; do not emulate an unsupported apply action with a whole-body replacement.
+
+The selected levels retain their order. `refresh_preview_review` prepares one explicit reviewed/skipped decision without advancing the checkpoint. Present its exact level and decision for human confirmation at the returned NobleSEO URL, then use `refresh_review_level` with the unchanged inputs and approval ID. A completed preview is required for a reviewed decision; skipping is an explicit decision, not an automatic way past missing work. Never silently mark review complete or advance another selected level.
+
+`refresh_prepare_pool` persists the local source/demand pool without provider work. `refresh_read_gsc_queries` explicitly reads and stores current page-query demand when separately granted; a stored `refresh_get` read never refreshes it. Keep snapshot date, stale/unavailable states and demand-only provenance. Search demand does not prove a factual claim.
+
+For a requested stop, `refresh_stop` prevents subsequent work under the current run while preserving artifacts, receipts, known costs and unresolved holds. Do not promise cancellation of a physical request already sent or a refund of uncertain usage. Re-read the final run and report remaining reconciliation needs.
 
 ## Save only a requested change
 

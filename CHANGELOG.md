@@ -4,6 +4,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Extend article optimization with a conditional Refresh mode: exact saved-body preparation, bounded quotes, native cost/review approval, immutable acceptance versus dispatch status, explicit queue retry, scoped evidence and stop recovery. Shared research and credential-dependent work retain their separately qualified requirements; general article generation is not claimed.
 - Extend discovered Analytics guidance with separate stored property/page grains, shared product trend/decay calculations, zero-recorded-click proxy denominators and threshold-based opportunity quadrants. Add frozen-reference competitor comparison guidance without implicit acquisition.
 - Document conditional staged article imports, saved-URL restrictions, paid-fallback refusal and exact revision/digest/lease protection before explicit application.
 - Extend article optimization with conditional canonical outline/source-policy edits, private grounding and stored quality modes, article document selection and schema-option changes. Each mode follows complete discovered scope requirements, current bindings and separate acquisition/publication gates.
