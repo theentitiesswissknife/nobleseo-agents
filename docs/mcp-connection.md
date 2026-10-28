@@ -66,3 +66,7 @@ codex mcp login nobleseo --scopes read,analytics.read
 Verify that `analytics_get_project_site`, `analytics_get_data_status`, `analytics_report_query_performance`, `analytics_compare_query_performance` and `analytics_find_ctr_opportunities` appear. Old `read` grants do not include them. Select only authorized projects. These reports are privacy-filtered query/page observations, not complete property totals, GA4 reports or a live Google connection. If absent, use supplied exports or another authorized connector.
 
 References: [Codex MCP](https://learn.chatgpt.com/docs/extend/mcp) and [Claude Code MCP](https://code.claude.com/docs/en/mcp).
+
+## Optional internal-link candidate
+
+After deployment and registered-client scope admission are confirmed, request fresh `links.read` consent for stored internal-link review. Explicit simulation separately requires `links.write`. Discover the live catalogue and capability limits. Existing grants and plugin installation do not add these permissions. The project needs its explicit site/path binding and stored analysis; section access does not grant the entire property. Exact preview/application and plan-write capabilities remain unfinished in this candidate and must not be inferred from simulation support. External CMS writes require their separately supported authority.

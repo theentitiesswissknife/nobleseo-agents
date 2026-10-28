@@ -13,7 +13,7 @@ Automatic MCP connection packaging remains separate from skill installation. Set
 ## Future capabilities
 
 - The local Analytics server increment adds five bounded GSC query/page read tools under `analytics.read`. The GSC review skill has a capability-detected path for them; deployment and fresh consent are separate acceptance gates. Complete property totals, content-decay adapters and GA4 remain future work.
-- Internal-link review needs a public read tool before it can be offered as an MCP workflow.
+- The local portfolio candidate includes scoped persisted link reads and explicit simulation under fresh `links.read`/`links.write` consent. `internal-link-review` discovers these capabilities; exact application and plan edits remain required server work. Deployment and native-client acceptance remain pending.
 - Publication needs explicit supported tools and separate authorization; it is outside these research skills.
 
 See [CHANGELOG.md](../CHANGELOG.md) for version history and [CONTRIBUTING.md](../CONTRIBUTING.md) for release checks.
