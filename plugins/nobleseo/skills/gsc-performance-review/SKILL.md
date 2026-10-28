@@ -21,6 +21,18 @@ The Analytics server increment requires an explicitly granted `analytics.read` s
 
 If the server returns `ANALYTICS_WINDOW_TOO_LARGE_NARROW_FILTERS`, narrow the dates or exact page/query; do not retry the same request with a smaller output page and assume that fixes source size. If a cursor snapshot changes, restart the same report and discard the earlier partial result. If data is unavailable, report that limitation without silently fetching live Google data or starting a backfill.
 
+## Stored performance, trends and decay (when discovered)
+
+Discover `analytics_report_performance` and `analytics_compare_performance` before using them. Select the declared `property_day` or `page_day` grain. Property-day totals use the stored daily-total markers; page-day results use the separate page breakdown. Do not add markers to page details or reconstruct a property total from query rows. A section grant cannot read property totals; retain the section and use page-day evidence. Comparison dates have equal duration and do not overlap, with daily rows aligned by offset; missing days stay unknown and zero-baseline relative changes stay null.
+
+For a trend or decay question, discover `analytics_get_content_trends` and `analytics_analyze_content_decay`. Their current schemas require 30–180 explicit past days, attainable minimum observation counts and declared metric thresholds. Preserve the returned algorithm/version, observed dates, regression significance and severity thresholds. The active product regression is shared, while this scoped mode uses stored web observations and declared weighted daily aggregation because the legacy aggregate cannot isolate search type. Do not mix these results with another algorithm or population as if they were equivalent. Missing days are not zero-filled. A fitted decline is a signal to investigate; it does not identify the cause, prove a content defect or forecast recovery.
+
+`analytics_analyze_zero_click` returns a proxy with monthly distinct query/page denominators. In the current method an identity qualifies when any observed row records zero clicks; another row for it may have clicks. Distinct identities cannot be summed across months. Preserve unavailable history/correlations, missing observations and privacy limits. Do not label this as measured zero-click SERP behavior or attribute it to AI Overviews.
+
+`analytics_get_opportunity_quadrant` classifies stored page sums with explicit impression and CTR thresholds. CTR is a ratio, and the default 1% threshold is a classification choice. Retain the thresholds, grouping/population and raw metrics. A quadrant label is not expected uplift or measured business impact. The current scoped mode does not load property-wide saved groups.
+
+These tools perform no sync, materialization, acquisition or provider action. Device/country/search-appearance dimensions are unavailable unless a separately discovered contract declares a supported disjoint grain. Do not infer them from the performance or trend results. If a required tool is missing, use the earlier query-data or authorized-export path and state which analysis remains unavailable.
+
 ## Establish what can be compared
 
 Identify the property, requested question, current and comparison dates, search type, filters and row grain. Record extraction time and data completeness when supplied. Prefer comparable complete periods, including weekday alignment; use a year-over-year comparison when available and relevant to seasonality. If the supplied dates are partial or mismatched, state the limitation rather than quietly treating them as equivalent.

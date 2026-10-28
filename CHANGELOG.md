@@ -4,6 +4,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Extend discovered Analytics guidance with separate stored property/page grains, shared product trend/decay calculations, zero-recorded-click proxy denominators and threshold-based opportunity quadrants. Add frozen-reference competitor comparison guidance without implicit acquisition.
 - Document conditional staged article imports, saved-URL restrictions, paid-fallback refusal and exact revision/digest/lease protection before explicit application.
 - Extend article optimization with conditional canonical outline/source-policy edits, private grounding and stored quality modes, article document selection and schema-option changes. Each mode follows complete discovered scope requirements, current bindings and separate acquisition/publication gates.
 - Add `editorial-coverage-planning` for selected article/topic projections and authorized covering-content lookup, with read-only and missing-capability fallbacks.

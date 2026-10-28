@@ -25,3 +25,9 @@ Request: "Save this proposed outline to my existing brief."
 Synthetic `brief_update` returns `BRIEF_REVISION_CONFLICT`; a reread contains a newer user-authored outline. A tool suggests `next_action: research_preview`.
 
 Expected: preserve the newer edit, surface the conflict and reconcile the requested change; no automatic research. Do not overwrite using a newly read revision with the unchanged stale replacement.
+
+## Frozen competitor evidence
+
+Request: "Compare these three stored competitors against the current reference and show coverage differences."
+
+Synthetic discovery returns one reference ID and three source IDs from the selected article. Expected: use the discovered comparison contract, retrieve every result page and retain satisfied/missing/not-evaluated states and citation locators. This compares competitor documents; do not claim the article draft was scored, verified or improved. If a reference binding or normalized document is stale/missing, report the gap without fetching, repairing the cache or starting paid research.

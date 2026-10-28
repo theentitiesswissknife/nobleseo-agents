@@ -21,6 +21,8 @@ When the user asks to create a stored brief, call `brief_prepare` using a stable
 
 ## Research only when needed and requested
 
+For a stored competitor evidence audit, discover `research_compare_competitors`. Use `research_get_serp` to inspect its `competitor_comparison` reference ID and persisted source IDs; this discovery is not proof that every binding is current. Select at most five sources from the same article and one reference, then follow every comparison cursor. The tool compares selected competitor documents, without scoring or changing the article draft. Preserve requirement identities, satisfied/missing/not-evaluated states, coverage differences and citation URLs/document hashes/locators. Lexical or structural coverage does not verify a source claim or establish ranking value. A stale, missing, mixed or unavailable reference/document requires an explicit new qualified research workflow if the user requests one; do not fetch or repair it during a read. If comparison is absent, use visible evidence without inventing a coverage matrix.
+
 Missing or stale evidence is a limitation to report, not permission to buy a fresh analysis. Reuse available research when that meets the task. A returned `next_action` is a suggestion, not authorization.
 
 When new research is requested:
