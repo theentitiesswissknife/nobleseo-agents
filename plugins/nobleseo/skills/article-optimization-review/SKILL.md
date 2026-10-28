@@ -53,11 +53,15 @@ Read the saved article and `refresh_get` before preparing work. `refresh_prepare
 
 Only a ready level preview with an approval URL can proceed. Present that exact preview for approval in NobleSEO. Do not approve it through an agent-controlled browser or claim that a user's general request completes the browser cost confirmation. `refresh_start_level` accepts that approval ID for this article and starts one canonical job. There is no automatic body application, next-level execution or publication. Retain its immutable acceptance receipt separately from current job/dispatch status. A `not_admitted` receipt is a pre-queue refusal; use a new preview after resolving its cause, not a new UUID to revive the declined request.
 
+A consumed quote cannot authorize another job or move an existing job to a new grant. A refusal that identifies an existing canonical job preserves that job's original authority; it does not establish that the earlier job never ran. Inspect its stored status before further action.
+
 If the start response is lost, replay the same approval to recover its receipt and inspect `refresh_get`. Replaying acceptance does not requeue work. Only when dispatch remains pending should an explicitly requested `refresh_retry_dispatch` reconcile the same job identity. An uncertain provider outcome is not permission to start a second job or reset a budget. Revoked grants, changed article/project/source bindings, feature flags or entitlements require resolution through the owning product.
 
 Inspect supported candidate text, citation locators, coverage and uncertainty before a review decision. Missing private sources cannot be recovered from cached agent context. Candidate dismissal uses the exact run binding and stable request UUID. Applying notes, inserting headings or editing the article requires its separately discovered canonical write flow; do not emulate an unsupported apply action with a whole-body replacement.
 
 The selected levels retain their order. `refresh_preview_review` prepares one explicit reviewed/skipped decision without advancing the checkpoint. Present its exact level and decision for human confirmation at the returned NobleSEO URL, then use `refresh_review_level` with the unchanged inputs and approval ID. A completed preview is required for a reviewed decision; skipping is an explicit decision, not an automatic way past missing work. Never silently mark review complete or advance another selected level.
+
+An `already_recorded` review receipt refers to the existing decision and preserves its original approval provenance. Do not describe it as a new review or overwrite the earlier receipt.
 
 `refresh_prepare_pool` persists the local source/demand pool without provider work. `refresh_read_gsc_queries` explicitly reads and stores current page-query demand when separately granted; a stored `refresh_get` read never refreshes it. Keep snapshot date, stale/unavailable states and demand-only provenance. Search demand does not prove a factual claim.
 
