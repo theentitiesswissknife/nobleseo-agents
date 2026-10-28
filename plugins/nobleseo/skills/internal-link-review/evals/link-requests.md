@@ -6,5 +6,7 @@
 4. A user requests application but the catalogue exposes reads and simulation only. Explain the missing exact preview/application capability and provide a concrete proposal. Do not invent an endpoint, approve the business item implicitly or request raw WordPress credentials.
 5. Inspect a mixed application receipt with one visible source requiring reconciliation and sibling-section pages withheld. Report the visible outcome and uncertainty without site-wide counts, live verification or automatic retry.
 6. An export contains legacy credential fields, hidden endpoint URLs and private draft notes. Keep them out of the review and any artifact. A changed pagination snapshot requires a fresh consistent read, not concatenation or invented missing rows.
+7. Request an explicit exclusion from the next batch, followed by withdrawal of one visible item. Use fresh item/plan/source versions for each distinct operation. Preserve the native history; do not remove a CMS link, run discovery or reuse stale versions after a conflict.
+8. Approve one selected saved candidate with its exact identity/revision/evidence hash, then separately request unapproval. A changed candidate, queued/confirmed item, lost scope or stale source must refuse the write. Business approval does not establish quality qualification or authorize application/publication.
 
 Manual native-client execution remains a separate acceptance check. These prompts use synthetic identities and do not authorize provider calls, CMS writes or publication.

@@ -5,6 +5,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 ## [Unreleased]
 
 - Add `internal-link-review` for discovered project-section reads and explicit scoped simulations, with freshness, quality and application-receipt guidance. Exact application and plan-write workflows remain required server work; native-client evaluation is pending.
+- Extend internal-link guidance with discovered versioned inclusion, withdrawal and exact business approval/unapproval. Selected application and the remaining plan/discovery/export workflows remain required server work.
 - Extend Refresh recovery guidance with exact human-confirmed questions and reduced-discovery checkpoints under the original root, stored accounting reads and explicit refusal of provider-budget resets or expired authority.
 - Explain discovered canonical Refresh answer acceptance separately from exact heading/note-view body previews and saves, with revision, lease, history and replay protection. No automatic application or publication is introduced.
 - Extend discovered Refresh guidance with shared research approval, one preserved provider budget, paginated private guide review, exact human-confirmed note/need edits and explicit pending-queue reconciliation. Research completion still requires a fresh level estimate; article writing/application/publication remain separate.
