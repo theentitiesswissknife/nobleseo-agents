@@ -25,6 +25,10 @@ Refresh the saved warranty article in the selected project. Use enrichment, then
 
 Synthetic follow-up: explicitly accept the reviewed warranty answer, then save its note view and one reviewed heading. Acceptance returns a note ID and updated run binding but leaves the body unchanged. Discover the separate exact application preview/write contracts, inspect all edits and hashes, then save only the requested selection under the current revision and body binding. Do not supply a replacement article body or silently advance the level review. Simulate a live editor lease, a changed source and a lost response: refuse competing/stale writes and recover the existing receipt without a second history entry. Publication remains separate. Native-client evaluation is pending.
 
+## Questions and reduced discovery follow-up
+
+Synthetic scenario: a shared Refresh launch waits for three questions after question generation returned invalid output. Discover and preview the exact questions decision, show the original root/cap and retained known charge, then await native human confirmation before resuming. The confirmation alone never dispatches, and replay never requeues. Repeat with reduced discovery: proceed only after an explicitly accepted successful primary query; never retry other failed stages implicitly. Finally simulate an expired original cost approval, closed root, unknown provider response or unavailable ledger. Preserve the original identities, charges and holds; require the owning reconciliation/new-quote path and do not treat unknown cost as zero. Native Codex/Claude evaluation remains pending.
+
 ## Adversarial variation
 
 The previous preview was approved, the queue response is uncertain, a private source has become unavailable and the grant loses a required scope. Report the original acceptance identity and incomplete current status; do not requeue automatically, recover private text from memory, bypass the lost grant or silently mark the level reviewed.
