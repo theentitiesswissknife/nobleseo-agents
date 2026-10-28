@@ -4,6 +4,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Explain discovered canonical Refresh answer acceptance separately from exact heading/note-view body previews and saves, with revision, lease, history and replay protection. No automatic application or publication is introduced.
 - Extend discovered Refresh guidance with shared research approval, one preserved provider budget, paginated private guide review, exact human-confirmed note/need edits and explicit pending-queue reconciliation. Research completion still requires a fresh level estimate; article writing/application/publication remain separate.
 - Extend article optimization with a conditional Refresh mode: exact saved-body preparation, bounded quotes, native cost/review approval, immutable acceptance versus dispatch status, explicit queue retry, scoped evidence and stop recovery. Shared research and credential-dependent work retain their separately qualified requirements; general article generation is not claimed.
 - Extend discovered Analytics guidance with separate stored property/page grains, shared product trend/decay calculations, zero-recorded-click proxy denominators and threshold-based opportunity quadrants. Add frozen-reference competitor comparison guidance without implicit acquisition.
