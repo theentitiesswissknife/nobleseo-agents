@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered local knowledge embeddings with an exact zero provider cap, existing local model assets, complete tokenizer/prompt bounds and unchanged native credits/approval. Add four authored article scenarios (24 total); live model quality and native desktop acceptance remain unqualified.
+
 - Guide discovered knowledge ingestion through exact native source selection, human cost approval, original-job receipts and per-document known/held/uncertain outcomes. Preserve article versus shared administration, source authority and separate body/grounding actions. Add four authored article scenarios (20 total); deployed/native desktop acceptance remains conditional.
 
 - Guide discovered article-only application of exactly versioned stored project/social voices, bounded source discovery, current context/revision/lease protection and immutable replay without body rewrite or profile activation. Add four authored article scenarios (16 total); paid analysis/ingestion and native desktop acceptance remain separate.
