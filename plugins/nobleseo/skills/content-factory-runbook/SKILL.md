@@ -1,9 +1,9 @@
 ---
 name: content-factory-runbook
-description: Inspect NobleSEO Content Factory templates, exact published pipeline versions and stored project run items or action states. Use for Factory run reviews, pipeline inspection and item-level progress reports, preserving project scope and distinguishing stored inspection from separately qualified execution.
+description: Inspect NobleSEO Content Factory templates, exact published pipelines and stored run items, or separately inspect native research batches and persisted GSC candidate rankings. Use for batch reviews and item-level progress reports, preserving each owner's IDs, project scope and separate execution authority.
 ---
 
-# Review project Content Factory work
+# Review project Factory and research batches
 
 ## Requirements
 
@@ -24,6 +24,16 @@ Use `factory_list_runs` for the selected project and `factory_get_run` for its e
 A historical native run is visible only when every original item remains provably in this project. Mixed-project runs and runs with missing membership are not project resources for this connection, even if the requester is an organization administrator. Do not discover their other items through organization-wide endpoints, guess foreign IDs or infer zero activity from a visibility refusal.
 
 These are stored state projections. They do not poll providers, reconcile queues or external deliveries, retry tasks, cancel work or initialize an allowance. A stored action's receipt-available marker is not an external verification result. Private errors, warnings and receipt payloads remain withheld; use a separately authorized owning workflow when available. Failed, queued or cancelled status does not establish zero cost, a refund or absence of unresolved usage.
+
+## Inspect a research batch separately
+
+Discover `research_batch_list` and `research_batch_get`, which require `read` for the selected project. Preserve the native UUID batch and item IDs, content IDs, keyword source, linked research-run ID, native item/run statuses and timestamps. An item's batch status and its linked research status describe different owners. A missing cost is unknown; cancellation or failure does not establish zero spend or a refund. Private errors and GSC query evidence have availability markers, not readable payloads in this projection. Do not infer their contents.
+
+The complete original batch selection must remain in this project and contain at most 20 articles for this initial adapter. A moved or missing article makes the whole batch unavailable through this connection. Follow every item page with its original grant, project, batch and observed snapshot. Do not replace a visibility refusal with a partial aggregate or treat missing rows as no activity in the organization.
+
+`research_batch_candidates` separately requires explicit `analytics.read` in addition to `read`. It uses the native picker, project website section, article eligibility and ranking rules over bounded persisted GSC query/page observations. It does not synchronize Google or create a batch. Preserve unavailable metrics, `gsc_reason`, the reported window and source-grain caveat; these are not property totals, a guaranteed web-only dataset or proof of complete ingestion. A source-bound refusal needs a deliberately narrower supported workflow; do not silently rank truncated inputs. Ranking is inspection, not authorization to select every matching article at execution time.
+
+Only discovered and qualified `research_batch_preview`, `research_batch_start`, `research_batch_cancel` and `research_batch_get_map` can provide their corresponding workflow. Their absence leaves those actions unavailable. Do not create a Factory run as a substitute, rebuild a map during a read, use a generic endpoint, launch single-article research to simulate a batch, or turn feedback into an implicit write. Starting requires an explicit item set, exact per-item source/reference bindings, a bounded cumulative allowance and separate approval. A stored status read never resends a job.
 
 ## Keep execution separate
 

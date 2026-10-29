@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Extend the existing batch runbook with conditional research-batch list/checkpoint inspection and separately consented persisted-GSC candidate rankings. Preserve original batch ownership, exact article/run attribution, complete project membership, unknown cost and read-only recovery. Add seven authored scenarios; execution, cancellation and map contracts remain unfinished backend work.
+
 - Add conditional Content Factory inspection guidance for explicit `factory.read`, native template/version discovery, scoped item/action pagination, private configuration and original run boundaries. Include seven authored scenarios; run execution and cancellation remain unfinished backend work.
 
 - Guide discovered canonical Outline generation and section regeneration through exact native approvals, separate article/plan/background revisions, one shared text/query-embedding USD root and original request status. Keep article-body writes, insertion, acceptance and publication separate. Add five authored evaluation scenarios; deployed and native desktop acceptance remain conditional.
