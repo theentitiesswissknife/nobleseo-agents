@@ -4,6 +4,7 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered exact draft-only link preview/application, source revisions and leases, public offset mapping around private notes, partial per-source outcomes and immutable replay. WordPress application remains required server work; a saved draft is not a live CMS write.
 - Add `internal-link-review` for discovered project-section reads and explicit scoped simulations, with freshness, quality and application-receipt guidance. Exact application and plan-write workflows remain required server work; native-client evaluation is pending.
 - Extend internal-link guidance with discovered versioned inclusion, withdrawal and exact business approval/unapproval. Selected application and the remaining plan/discovery/export workflows remain required server work.
 - Extend Refresh recovery guidance with exact human-confirmed questions and reduced-discovery checkpoints under the original root, stored accounting reads and explicit refusal of provider-budget resets or expired authority.
