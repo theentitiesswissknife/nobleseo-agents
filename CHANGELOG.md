@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide four additional discovered cloud embedding profiles with per-model context, dimension and input bounds, original approval/receipt identity and fixed routing ceilings. Add four authored article scenarios (28 total); live provider/model and native desktop qualification remain separate.
+
 - Guide discovered local knowledge embeddings with an exact zero provider cap, existing local model assets, complete tokenizer/prompt bounds and unchanged native credits/approval. Add four authored article scenarios (24 total); live model quality and native desktop acceptance remain unqualified.
 
 - Guide discovered knowledge ingestion through exact native source selection, human cost approval, original-job receipts and per-document known/held/uncertain outcomes. Preserve article versus shared administration, source authority and separate body/grounding actions. Add four authored article scenarios (20 total); deployed/native desktop acceptance remains conditional.
