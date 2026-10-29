@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Add `review-and-publish` for discovered exact WordPress preview/approval/dispatch, explicit target and revision binding, preparatory media uncertainty, stored receipts and same-ID verification without resend. Approved retry/compensation remains required server work; native-client evaluation is pending.
+
 - Guide discovered exact draft-only link preview/application, source revisions and leases, public offset mapping around private notes, partial per-source outcomes and immutable replay. WordPress application remains required server work; a saved draft is not a live CMS write.
 - Add `internal-link-review` for discovered project-section reads and explicit scoped simulations, with freshness, quality and application-receipt guidance. Exact application and plan-write workflows remain required server work; native-client evaluation is pending.
 - Extend internal-link guidance with discovered versioned inclusion, withdrawal and exact business approval/unapproval. Selected application and the remaining plan/discovery/export workflows remain required server work.
