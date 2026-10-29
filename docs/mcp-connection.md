@@ -71,6 +71,10 @@ References: [Codex MCP](https://learn.chatgpt.com/docs/extend/mcp) and [Claude C
 
 After deployment and registered-client scope admission are confirmed, request fresh `links.read` consent for stored internal-link review. Explicit simulation and supported versioned plan/business-review changes separately require `links.write`. Exact draft-only link preview/application additionally requires `content.write`; inspecting drafts uses the article tools' separate read permission. Discover the live catalogue, supported targets and capability limits. Existing grants and plugin installation do not add these permissions. The project needs its explicit site/path binding and stored analysis; section access does not grant the entire property. WordPress application and the remaining plan/discovery/export workflows remain unfinished in this candidate. External CMS writes require their separately supported authority.
 
+## Optional Content Factory inspection candidate
+
+After backend deployment and registered-client admission, `factory.read` permits the four discovered Factory inspection tools for the selected project. It does not add run execution, cancellation, pipeline mutation, organization-wide browsing or external delivery authority. Curated cards, exact published versions and stored run states remain separate; private config and diagnostics stay opaque. Mixed-project or incompletely attributable historical runs remain outside a single-project connection. Use the `content-factory-runbook` skill and retain native IDs, versions, checksums and exact pagination.
+
 ## Optional Outline generation candidate
 
 After the backend increment and registered-client admission are confirmed, request `content.generate`, `content.read` and `knowledge.read` together. Discover `outline_preview_generate`, `outline_start_generate`, `outline_regenerate_section` and `outline_get` with `selection=request`. The original Labs catalogue and the dedicated four-skill 0.2.1 approval-retest package do not supply this increment. Plugin installation alone does not add the tools or scopes.

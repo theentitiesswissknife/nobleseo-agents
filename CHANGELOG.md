@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Add conditional Content Factory inspection guidance for explicit `factory.read`, native template/version discovery, scoped item/action pagination, private configuration and original run boundaries. Include seven authored scenarios; run execution and cancellation remain unfinished backend work.
+
 - Guide discovered canonical Outline generation and section regeneration through exact native approvals, separate article/plan/background revisions, one shared text/query-embedding USD root and original request status. Keep article-body writes, insertion, acceptance and publication separate. Add five authored evaluation scenarios; deployed and native desktop acceptance remain conditional.
 
 - Observe the saved action approval by replaying the exact original preview before the first research or clustering execution. Pending approval waits on the original identity; post-dispatch ambiguity reconciles the existing run. Add delayed-browser-approval evaluation scenarios and a feedback template. This handshake uses the original Research MCP contracts.
