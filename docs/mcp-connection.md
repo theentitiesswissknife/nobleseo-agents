@@ -51,7 +51,7 @@ Run `/mcp` inside Claude Code and complete browser authentication, choosing the 
 3. To run new clustering, supply a small keyword list, project, market and language. Review the preview before approving it in NobleSEO.
 4. Select a cluster and request a brief from existing research. Request new research separately if needed.
 
-`APPROVAL_REQUIRED` means browser approval has not been accepted. Unknown cost is not a free run. Missing tools can reflect missing scope, disabled capability or an unavailable deployment; report the actual response instead of bypassing it.
+`APPROVAL_REQUIRED` means the server did not observe an approved action for that call. OAuth consent, opening an approval link and approving the action are separate steps. Wait until the action page says `Preview status: approved`. Before the first execution, replay the matching preview with the exact original inputs and unchanged request ID; verify the same approval ID/digest, approved status and a future expiry. A pending replay is a reason to wait, not to start repeatedly or create another approval. After execution or an ambiguous dispatch, inspect the existing run/receipt instead of replaying a preview for an earlier checkpoint. Unknown cost is not a free run. Missing tools can reflect missing scope, disabled capability or an unavailable deployment; report the actual response instead of bypassing it. Use the [feedback template](feedback-template.md) for reproducible findings without credentials.
 
 ## Optional Analytics increment
 

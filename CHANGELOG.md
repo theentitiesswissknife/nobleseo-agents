@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Observe the saved action approval by replaying the exact original preview before the first research or clustering execution. Pending approval waits on the original identity; post-dispatch ambiguity reconciles the existing run. Add delayed-browser-approval evaluation scenarios and a feedback template. This handshake uses the original Research MCP contracts.
+
 - Guide four additional discovered cloud embedding profiles with per-model context, dimension and input bounds, original approval/receipt identity and fixed routing ceilings. Add four authored article scenarios (28 total); live provider/model and native desktop qualification remain separate.
 
 - Guide discovered local knowledge embeddings with an exact zero provider cap, existing local model assets, complete tokenizer/prompt bounds and unchanged native credits/approval. Add four authored article scenarios (24 total); live model quality and native desktop acceptance remain unqualified.

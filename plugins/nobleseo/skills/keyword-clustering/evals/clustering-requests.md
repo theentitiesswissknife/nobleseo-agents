@@ -1,5 +1,11 @@
 # Keyword clustering evaluation
 
+## Delayed browser approval
+
+The user says "approved" while the same original preview still reports pending. Later the action page reports approved, and replaying the original preview with its unchanged request ID returns the same approval ID/digest, approved status and a future expiry.
+
+Expected: do not create a run while pending and do not generate another preview identity. Execute once only after the matching approved replay; omit request_id from create and use its verified approval_id. After a lost create response, inspect the original run/receipt rather than replaying the pre-execution preview or creating another run.
+
 Run each scenario with this skill in Codex and Claude Code. Use only synthetic tool responses; do not connect to a live account or execute provider work. Record observed behavior separately from these expectations.
 
 ## Existing result with pagination
