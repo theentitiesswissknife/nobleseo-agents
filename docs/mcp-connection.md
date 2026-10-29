@@ -77,6 +77,8 @@ After backend deployment and registered-client admission, `factory.read` permits
 
 Research batch inspection is a separate owner and capability family. Discover `research_batch_list` and `research_batch_get` under `read`; candidate ranking additionally requires explicit `analytics.read` and uses stored GSC data without synchronization. The initial adapter admits inspection only for complete original selections of at most 20 current project articles. Preserve native batch/item/research IDs, missing cost and pagination. Missing preview, start, cancellation or map tools cannot be replaced by a Factory run or direct HTTP. Deployment and native client acceptance remain separate qualifications.
 
+When `research_batch_get_map` is discovered under `read`, inspect its stored preliminary needs/cells and exact query verdicts separately, preserving native completeness, snapshot and stale-basis information. It does not rebuild a map, record feedback or authorize batch execution. Project reach/demand and the current viewer's vote remain scoped; private provider responses and feedback notes are withheld.
+
 ## Optional Outline generation candidate
 
 After the backend increment and registered-client admission are confirmed, request `content.generate`, `content.read` and `knowledge.read` together. Discover `outline_preview_generate`, `outline_start_generate`, `outline_regenerate_section` and `outline_get` with `selection=request`. The original Labs catalogue and the dedicated four-skill 0.2.1 approval-retest package do not supply this increment. Plugin installation alone does not add the tools or scopes.

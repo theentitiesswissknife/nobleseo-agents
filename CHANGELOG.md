@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide conditional native research-map inspection with exact need/cell/query/reach pages, preliminary verdicts, stale versus observed states, current project demand and viewer-only votes. Add five authored scenarios; map rebuild/feedback and research-batch execution remain separate actions.
+
 - Extend the existing batch runbook with conditional research-batch list/checkpoint inspection and separately consented persisted-GSC candidate rankings. Preserve original batch ownership, exact article/run attribution, complete project membership, unknown cost and read-only recovery. Add seven authored scenarios; execution, cancellation and map contracts remain unfinished backend work.
 
 - Add conditional Content Factory inspection guidance for explicit `factory.read`, native template/version discovery, scoped item/action pagination, private configuration and original run boundaries. Include seven authored scenarios; run execution and cancellation remain unfinished backend work.
