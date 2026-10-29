@@ -19,6 +19,8 @@ If that fails, ask the user before installing anything (`python -m pip install p
 
 ## Workflow
 
+When discovered, NobleSEO `analytics_report_segments` supplies bounded persisted segment and daily heatmap cells. Retrieve every required page and preserve the exact project section, source grain, definitions and snapshot before charting. Ranking counts are source rows, not unique queries; preserve the native residual bucket caveat. Heatmap `imputed_zero` cells differ from observed zeros, and null/unobserved dates remain gaps. Do not combine a group calendar's fills with a performance calendar's missingness rule. Stored article `rank_history` requires separate content-read consent and retains engine/device/location/time; it is not GSC traffic or a new SERP check. Chart the retrieved observations without starting tracking, synchronization, provider work or materialization.
+
 1. **Get the data.** Use a file the user provides: a GSC "Performance" export (CSV), a GA4 export (CSV), or a JSON list of rows. If the data comes from another tool the user has connected, save the rows to a `.json` file (a list of objects) or a `.csv` file in the working directory first.
 2. **Check the columns.** Read the header and pick the exact column names for `--x`, `--y` and so on. GSC exports use names such as `Date`, `Top queries`, `Top pages`, `Clicks`, `Impressions`, `CTR`, `Position`. Percent values like `5.2%` are converted to numbers automatically.
 3. **Run a script** from the `scripts/` folder next to this file, writing the chart into the working directory:
