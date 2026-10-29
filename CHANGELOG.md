@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered knowledge ingestion through exact native source selection, human cost approval, original-job receipts and per-document known/held/uncertain outcomes. Preserve article versus shared administration, source authority and separate body/grounding actions. Add four authored article scenarios (20 total); deployed/native desktop acceptance remains conditional.
+
 - Guide discovered article-only application of exactly versioned stored project/social voices, bounded source discovery, current context/revision/lease protection and immutable replay without body rewrite or profile activation. Add four authored article scenarios (16 total); paid analysis/ingestion and native desktop acceptance remain separate.
 
 - Guide discovered observed-node generation with a project-bound origin, exact target versus source revisions, no independent research-v2, retained failed-editor artifacts and explicitly approved reuse after cancellation. Extend authored generation scenarios to 22; native desktop acceptance remains pending.
