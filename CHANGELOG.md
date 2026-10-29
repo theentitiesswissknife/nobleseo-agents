@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Add `article-generation-and-refresh` with project-only native options, explicit capability discovery, exact approval/budget expectations and separate canonical Refresh checkpoints. Generation start/status/cancellation remain conditional on deployed tools; 12 authored scenarios are not native desktop acceptance evidence.
+
 - Add `review-and-publish` for discovered exact WordPress preview/approval/dispatch, explicit target and revision binding, preparatory media uncertainty, stored receipts and same-ID verification without resend. Extend it with separately approved same-ID immutable retry, checked compensation and canonical unknown-operation handling, legacy option refusals and project-only editor authority. Section creation and historical section-baseline variants remain required work; native-client evaluation is pending.
 
 - Guide discovered exact draft-only link preview/application, source revisions and leases, public offset mapping around private notes, partial per-source outcomes and immutable replay. WordPress application remains required server work; a saved draft is not a live CMS write.
