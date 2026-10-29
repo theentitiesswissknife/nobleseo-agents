@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered canonical Outline generation and section regeneration through exact native approvals, separate article/plan/background revisions, one shared text/query-embedding USD root and original request status. Keep article-body writes, insertion, acceptance and publication separate. Add five authored evaluation scenarios; deployed and native desktop acceptance remain conditional.
+
 - Observe the saved action approval by replaying the exact original preview before the first research or clustering execution. Pending approval waits on the original identity; post-dispatch ambiguity reconciles the existing run. Add delayed-browser-approval evaluation scenarios and a feedback template. This handshake uses the original Research MCP contracts.
 
 - Guide four additional discovered cloud embedding profiles with per-model context, dimension and input bounds, original approval/receipt identity and fixed routing ceilings. Add four authored article scenarios (28 total); live provider/model and native desktop qualification remain separate.
