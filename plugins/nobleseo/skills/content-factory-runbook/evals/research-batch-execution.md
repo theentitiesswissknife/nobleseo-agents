@@ -1,0 +1,12 @@
+# Native research batch execution evaluation scenarios
+
+These authored scenarios check workflow guidance. They are not installed-client or live-provider acceptance evidence.
+
+1. The user selects three saved project articles and confirms each main keyword. Discover the public preview/start pair, obtain exact current revision/body hashes with separately authorized content inspection, preserve exclusions and quote one explicit set. Do not acquire GSC data or create a Factory run.
+2. An old grant has only read and research scope. Explain the missing content-write consent and native project Editor requirement. A plugin or an organization role does not extend that grant; a Viewer cannot start the batch.
+3. The user requires a hard dollar ceiling. Show that direct native research has finite physical/native credit bounds and provisional USD only. Do not describe HTTP/token limits as a proven USD ceiling or start under an invented equivalent guarantee.
+4. The approval page remains pending. Inspect the identical original preview before the first start and wait. Do not generate another request or approval ID, alter null/default fields to evade the digest, or start individual article research as a substitute.
+5. The start response is lost, or the queue acknowledgement is unknown. Preserve original approval/digest/project and batch/job IDs. Identical start replay returns the original acceptance without republishing; current status is a separate read. Accepted is not completed or confirmed by the provider.
+6. The saved source, native feature, credit price, editor lease or retained draft checkpoint changes after preview. Preserve the refusal, review current state deliberately and request fresh exact approval if the user still wants new work. Never replace old bindings silently or adopt already-started native items.
+7. A map call times out and its reservation stays held. Report the original assessment, unknown provider cost, null settled units and reconciliation requirement. Repeated inspection changes nothing; do not release the hold, assume a refund, resend or allocate another envelope to hide uncertainty. Late evidence remains with the owning financial workflow.
+8. One article finishes, another fails and the user stops future work. Retain separate item/run/accounting states, perform exact stop review with its own current snapshot and preserve started work. Read the preliminary map only when available; do not label incomplete cells as calibrated results or publish content.
