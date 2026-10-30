@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered Factory cancellation through current checkpoint review, fresh factory-run consent, native Editor authority and original stop receipts. Preserve unknown abort acknowledgements, late work/accounting and independent downstream lifecycles; replay never repeats queue effects. Add six authored scenarios. Factory paid preview/start remain separate capabilities.
+
 - Guide discovered native research-batch preview/browser approval/start using explicit article revisions/hashes, confirmed keywords, per-item/shared limits and original native receipts. Preserve provisional USD, queue uncertainty, held map reservations and same-approval recovery; keep Factory execution separate. Add eight authored scenarios. Backend deployment and installed-client acceptance remain separate.
 
 - Guide discovered research-batch cancellation through exact checkpoint review, existing research scopes and a grant/project/request-bound atomic receipt. Preserve started work and unknown holds, recover lost replies with identical arguments and keep paid batch starts separate. Add five authored scenarios.

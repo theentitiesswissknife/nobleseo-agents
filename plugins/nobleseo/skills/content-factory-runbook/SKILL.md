@@ -1,6 +1,6 @@
 ---
 name: content-factory-runbook
-description: Inspect NobleSEO Content Factory activity, or review and start an explicitly approved native research batch when its tools are discovered. Preserve exact project/article revisions, keyword selection, shared work limits, original receipts and unknown outcomes; Factory and research batches keep separate owners.
+description: Inspect and request stopping scoped NobleSEO Content Factory runs, or review and start an explicitly approved native research batch when its tools are discovered. Preserve exact selection, source versions, shared work limits, original receipts and unknown outcomes; Factory and research batches keep separate owners.
 ---
 
 # Review project Factory and research batches
@@ -57,6 +57,12 @@ Read the canonical preliminary map with `research_batch_get_map` after the nativ
 
 ## Keep execution separate
 
-Starting, rerunning or cancelling requires its own discovered, qualified native workflow. If `factory_preview_run`, `factory_start_run` or `factory_cancel_run` is absent, explain the unavailable action and keep this review read-only. Do not replace it with research batches, article generation, generic HTTP, a direct database edit or a new queue request. Research batches have separate owners and contracts.
+When the user explicitly requests stopping one Factory run and `factory_cancel_run` is discovered, require `factory.read` plus `factory.run` and current native project Editor authority. This additional scope needs an admitted client registration and fresh consent; a prior read grant or plugin installation does not supply it. Read `factory_get_run` with `selection=cancellation`, following every page and retaining the exact snapshot. This bounded checkpoint review covers at most 20 retained items, without loading private action payloads/errors. Its active-item count is an observation, not spending or stop authority. A visible source-bound refusal is not permission to stop a partial selection.
+
+Submit the exact `project_id`, native `run_id`, `expected_snapshot` and one stable UUID `request_id`. The native stop and original grant/project/request receipt commit before known queue abort requests. Preserve the nested immutable `receipt` separately from current `abort_acknowledgements`: confirmed, not confirmed, pending and unknown acknowledgement do not mean the same thing. For an ambiguous reply, repeat only the identical arguments under the original grant; replay reads the original receipt and current observations without sending abort requests again. Do not replace the snapshot, allocate another request ID or borrow another grant to recover ambiguity. A genuinely changed checkpoint needs a fresh deliberate review, not blind substitution.
+
+An already terminal run can produce a native no-op receipt. A partially failed run with active items can still be stopped. In-flight work may finish and retain native charges/receipts; do not infer a refund, zero spend or rollback. Independently queued or already reserved downstream actions keep their own lifecycle. This command does not undo publication, stop an unrelated analysis job merely because it is now listed on the article, or repair missing historical membership. A later grant/role/project refusal remains a refusal even after the native stop committed.
+
+Starting or rerunning a Factory pipeline requires its own discovered, qualified workflow. If `factory_preview_run` or `factory_start_run` is absent, explain the unavailable action. Do not replace it with research batches, article generation, generic HTTP, a direct database edit or a new queue request. Research batches have separate owners and contracts.
 
 A future available execution preview must preserve the explicit item set, immutable pipeline version, cumulative provider/credit limits and disclosed downstream actions. Inspection or a ready template never supplies that spending or external-delivery approval. Report the selected project/run, observed item outcomes, withheld or missing evidence and the specific execution capability still required.
