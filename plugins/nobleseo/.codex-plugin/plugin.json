@@ -1,27 +1,39 @@
 {
   "name": "nobleseo",
-  "version": "0.1.0",
-  "description": "NobleSEO skills: charts for Google Search Console and GA4 data.",
+  "version": "0.3.0",
+  "description": "NobleSEO base workflows: keyword clusters, research and briefs, GSC, supported article generation and Refresh, draft review and existing assets.",
   "author": {
     "name": "The Entities Swiss Knife",
     "url": "https://github.com/theentitiesswissknife"
   },
   "homepage": "https://github.com/theentitiesswissknife/nobleseo-agents",
   "repository": "https://github.com/theentitiesswissknife/nobleseo-agents",
-  "keywords": ["seo", "google-search-console", "ga4", "charts", "nobleseo"],
+  "keywords": [
+    "seo",
+    "keyword-clustering",
+    "content-briefs",
+    "google-search-console",
+    "charts",
+    "nobleseo"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "NobleSEO",
-    "shortDescription": "Charts for Google Search Console and GA4 data",
-    "longDescription": "Turns Google Search Console and GA4 exports into clear charts: trends, top queries and pages, device shares, position vs CTR, day-by-hour patterns and multi-metric comparisons. The NobleSEO MCP connection will be added when it launches.",
+    "shortDescription": "NobleSEO research, articles and GSC workflows",
+    "longDescription": "Use discovered NobleSEO MCP base workflows for keyword clusters, research, briefs, GSC, supported single-article generation and Refresh, draft review and existing assets. Installing the plugin does not deploy server tools or extend permissions. Factory, WordPress and Google Analytics are outside this release.",
     "developerName": "The Entities Swiss Knife",
     "category": "Productivity",
-    "capabilities": ["Local Shell", "Write"],
+    "capabilities": [
+      "Local Shell",
+      "Write"
+    ],
     "websiteURL": "https://github.com/theentitiesswissknife/nobleseo-agents",
     "privacyPolicyURL": "https://github.com/theentitiesswissknife/nobleseo-agents/blob/main/PRIVACY.md",
     "defaultPrompt": [
-      "Use $gsc-visualization to chart daily clicks from my GSC export.",
-      "Use $gsc-visualization to plot position against CTR for my top queries."
+      "Use $keyword-clustering to review my existing run and export a keyword map.",
+      "Use $seo-content-briefing to create a local brief from existing research.",
+      "Use $gsc-performance-review to diagnose changes in these GSC exports.",
+      "Use $gsc-visualization to chart daily clicks from my GSC export."
     ]
   }
 }
