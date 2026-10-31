@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered native social generation through exact source/style/voice/model previews, browser approval, original queue delivery, managed text/image USD and native credit bounds, and stored status. Preserve partial derivatives, unknown storage outcomes and pending credit holds; publication remains separate. Add eight authored scenarios. Backend deployment and installed-client acceptance remain separate.
+
 - Guide discovered Factory cancellation through current checkpoint review, fresh factory-run consent, native Editor authority and original stop receipts. Preserve unknown abort acknowledgements, late work/accounting and independent downstream lifecycles; replay never repeats queue effects. Add six authored scenarios. Factory paid preview/start remain separate capabilities.
 
 - Guide discovered native research-batch preview/browser approval/start using explicit article revisions/hashes, confirmed keywords, per-item/shared limits and original native receipts. Preserve provisional USD, queue uncertainty, held map reservations and same-approval recovery; keep Factory execution separate. Add eight authored scenarios. Backend deployment and installed-client acceptance remain separate.
