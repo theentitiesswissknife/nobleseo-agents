@@ -78,3 +78,5 @@ tests/fixtures/                     synthetic data for the chart smoke test
 ## Contributing and security
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+
+The [next-session specification](docs/specs/ADVANCED_MCP_NEXT_SESSION_SPEC_2026-10-31.md) defines the deferred advanced generation/editor, Link Workbench and Social Intelligence work. It does not expand the published 0.3.0 base or authorize backend deployment.
