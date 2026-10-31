@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Document conditional Factory article/batch knowledge-query ceilings, original USD allocations, local encoding, drift and uncertain outcomes. Add six authored readiness scenarios; the absent Factory preview/start pair is still explicitly unavailable.
+
 - Guide discovered full-article native knowledge previews, original shared USD and finite query limits, local model requirements, permitted packet/source changes, uncertain vector results and private provenance. Add five authored scenarios; server qualification and installed-client acceptance remain separate.
 
 - Explain original Outline embedding/vector work limits, including zero-USD local attempts, unknown vector fees, source drift and uncertain native transport outcomes. Add three authored scenarios; full-article RAG composition and live acceptance remain separate.
