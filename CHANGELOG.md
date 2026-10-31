@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered full-article native knowledge previews, original shared USD and finite query limits, local model requirements, permitted packet/source changes, uncertain vector results and private provenance. Add five authored scenarios; server qualification and installed-client acceptance remain separate.
+
 - Explain original Outline embedding/vector work limits, including zero-USD local attempts, unknown vector fees, source drift and uncertain native transport outcomes. Add three authored scenarios; full-article RAG composition and live acceptance remain separate.
 
 - Guide discovered native GSC keyword article intake with exact active project property/section, explicit input provenance and existing approval/work/native-credit bounds. Preserve source-drift refusals, unapplied original review diagnostics and employee-only opportunity conversion. Add five authored scenarios; deployment and installed-client acceptance remain separate.
