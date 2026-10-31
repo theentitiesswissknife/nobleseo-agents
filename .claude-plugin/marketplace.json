@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "NobleSEO skills for Claude Code.",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
       "name": "nobleseo",
       "source": "./plugins/nobleseo",
-      "description": "Keyword clusters and content briefs through a separate NobleSEO MCP connection, plus GSC performance reviews and charts."
+      "description": "NobleSEO base research, article, draft and GSC workflows through a separately configured MCP connection."
     }
   ]
 }

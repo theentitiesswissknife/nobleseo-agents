@@ -1,11 +1,11 @@
 ---
 name: gsc-visualization
-description: Create clear charts from Google Search Console or GA4 data — trends over time, top queries or pages, device and country shares, position vs CTR, day-by-hour patterns and multi-metric comparisons. Use when the user asks for a chart, graph, plot or visual summary of search or analytics data they have exported or retrieved.
+description: Create clear charts from Google Search Console data — trends over time, top queries or pages, device and country shares, position vs CTR, day-by-hour patterns and multi-metric comparisons. Use when the user asks for a chart, graph, plot or visual summary of search or analytics data they have exported or retrieved.
 ---
 
-# GSC and GA4 charts
+# GSC charts
 
-Six ready-made chart scripts turn a Google Search Console (GSC) or GA4 table into a PNG chart. Use them instead of writing plotting code from scratch.
+Six ready-made chart scripts turn a Google Search Console (GSC) table into a PNG chart. Use them instead of writing plotting code from scratch.
 
 ## Requirements
 

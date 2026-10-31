@@ -8,7 +8,7 @@ Skills for AI coding assistants (Claude Code and Codex) from [NobleSEO](https://
 
 | Skill | What it does | Needs |
 |---|---|---|
-| [`gsc-visualization`](plugins/nobleseo/skills/gsc-visualization/SKILL.md) | Turns Google Search Console and GA4 exports (CSV or JSON) into charts: trends, top queries and pages, device shares, position vs CTR, day-by-hour patterns, multi-metric comparisons. | Python 3.10+ with pandas, matplotlib, numpy, seaborn, scipy |
+| [`gsc-visualization`](plugins/nobleseo/skills/gsc-visualization/SKILL.md) | Turns Google Search Console exports (CSV or JSON) into charts: trends, top queries and pages, device shares, position vs CTR, day-by-hour patterns, multi-metric comparisons. | Python 3.10+ with pandas, matplotlib, numpy, seaborn, scipy |
 | [`gsc-performance-review`](plugins/nobleseo/skills/gsc-performance-review/SKILL.md) | Diagnoses performance changes and prioritizes actions with evidence and limitations. | GSC exports or an available GSC connector |
 | [`keyword-clustering`](plugins/nobleseo/skills/keyword-clustering/SKILL.md) | Reviews clusters, hubs and domain coverage; exports results or runs approved clustering. | NobleSEO Research MCP, `read`, plus `clusterizer.run` for new runs |
 | [`seo-content-briefing`](plugins/nobleseo/skills/seo-content-briefing/SKILL.md) | Turns existing SERP/AI evidence and recommendations into a writer brief; optionally prepares a stored brief or runs approved research. | NobleSEO Research MCP; permissions depend on reading, writing or research |
@@ -20,7 +20,13 @@ Skills for AI coding assistants (Claude Code and Codex) from [NobleSEO](https://
 | [`review-and-publish`](plugins/nobleseo/skills/review-and-publish/SKILL.md) | Reviews an exact saved article and WordPress target, guides native approval and reads or explicitly verifies canonical publication receipts. | Discovered publication tools, `publish` consent and editor access; article reading needs its own scope |
 | [`content-factory-runbook`](plugins/nobleseo/skills/content-factory-runbook/SKILL.md) | Inspects scoped Factory activity and guides its separately requested native stop; supports exact browser-approved research-batch start, original receipt/status recovery and stopping when discovered. | Factory inspection: `factory.read`; Factory stop: `factory.read` plus `factory.run` and native Editor; research inspection: `read`; ranking: `analytics.read`; research start: `read`, `research.run`, `content.write` and native Editor; revision/hash inspection separately needs `content.read` |
 
-The original Research MCP offers clustering, research and brief tools. This candidate also supports an optional Analytics server increment for persisted GSC query/page reports and CTR opportunities. It requires deployed tools and an explicit `analytics.read` grant; GA4 retrieval is not included. Installing this plugin adds workflow guidance, not permissions or an automatic Google connection. See [MCP setup](docs/mcp-connection.md), [roadmap](docs/roadmap.md) and [changelog](CHANGELOG.md).
+The original Research MCP offers clustering, research and brief tools. This base release also supports an optional Analytics server increment for persisted GSC query/page reports and CTR opportunities. It requires deployed tools and an explicit `analytics.read` grant; GA4 retrieval is not included. Installing this plugin adds workflow guidance, not permissions or an automatic Google connection. See [MCP setup](docs/mcp-connection.md), [roadmap](docs/roadmap.md) and [changelog](CHANGELOG.md).
+
+## Release scope
+
+Version 0.3.0 contains the verified base workflows. Factory, WordPress and Google Analytics are excluded. Advanced article/editor combinations, full Link Workbench expansion and Social Intelligence are deferred to a separate implementation session. Existing scoped link review/simulation/draft insertion, social generation and delivery workflows remain conditional on the connected server exposing their qualified capabilities. See [the exact release scope](docs/release-scope.md).
+
+The plugin contains guidance and local chart scripts. It does not deploy or upgrade the NobleSEO backend. Tool discovery and current native flags/permissions remain authoritative.
 
 ## Install
 

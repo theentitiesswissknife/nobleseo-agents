@@ -1,7 +1,7 @@
 {
   "name": "nobleseo",
-  "version": "0.2.0",
-  "description": "NobleSEO keyword clustering, evidence-backed content briefs, GSC performance reviews and charts.",
+  "version": "0.3.0",
+  "description": "NobleSEO base workflows: keyword clusters, research and briefs, GSC, supported article generation and Refresh, draft review and existing assets.",
   "author": {
     "name": "The Entities Swiss Knife",
     "url": "https://github.com/theentitiesswissknife"
@@ -13,15 +13,14 @@
     "keyword-clustering",
     "content-briefs",
     "google-search-console",
-    "ga4",
     "charts",
     "nobleseo"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "NobleSEO",
-    "shortDescription": "Keyword clusters, content briefs and GSC analysis",
-    "longDescription": "Review keyword clusters and evidence-backed content briefs through a separately configured NobleSEO MCP connection. Diagnose Google Search Console performance from exports or an available connector, and create GSC/GA4 charts. New research and clustering require approved previews.",
+    "shortDescription": "NobleSEO research, articles and GSC workflows",
+    "longDescription": "Use discovered NobleSEO MCP base workflows for keyword clusters, research, briefs, GSC, supported single-article generation and Refresh, draft review and existing assets. Installing the plugin does not deploy server tools or extend permissions. Factory, WordPress and Google Analytics are outside this release.",
     "developerName": "The Entities Swiss Knife",
     "category": "Productivity",
     "capabilities": [

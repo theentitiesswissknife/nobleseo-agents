@@ -1,7 +1,7 @@
 {
   "name": "nobleseo",
-  "version": "0.2.0",
-  "description": "NobleSEO keyword clustering, evidence-backed content briefs, GSC performance reviews and charts.",
+  "version": "0.3.0",
+  "description": "NobleSEO base workflows: keyword clusters, research and briefs, GSC, supported article generation and Refresh, draft review and existing assets.",
   "author": {
     "name": "The Entities Swiss Knife",
     "url": "https://github.com/theentitiesswissknife"
@@ -13,7 +13,6 @@
     "keyword-clustering",
     "content-briefs",
     "google-search-console",
-    "ga4",
     "charts",
     "nobleseo"
   ]
