@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Explain original Outline embedding/vector work limits, including zero-USD local attempts, unknown vector fees, source drift and uncertain native transport outcomes. Add three authored scenarios; full-article RAG composition and live acceptance remain separate.
+
 - Guide discovered native GSC keyword article intake with exact active project property/section, explicit input provenance and existing approval/work/native-credit bounds. Preserve source-drift refusals, unapplied original review diagnostics and employee-only opportunity conversion. Add five authored scenarios; deployment and installed-client acceptance remain separate.
 
 - Guide discovered native social generation through exact source/style/voice/model previews, browser approval, original queue delivery, managed text/image USD and native credit bounds, and stored status. Preserve partial derivatives, unknown storage outcomes and pending credit holds; publication remains separate. Add eight authored scenarios. Backend deployment and installed-client acceptance remain separate.
