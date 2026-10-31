@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered partial Factory preview/start through original browser approval, exact item/pipeline fences, native shared/item limits, immutable acceptance and visible queue uncertainty. Add eight authored execution scenarios; unsupported native effects remain explicit unfinished work and installed-client acceptance remains separate.
+
 - Document conditional Factory article/batch knowledge-query ceilings, original USD allocations, local encoding, drift and uncertain outcomes. Add six authored readiness scenarios; the absent Factory preview/start pair is still explicitly unavailable.
 
 - Guide discovered full-article native knowledge previews, original shared USD and finite query limits, local model requirements, permitted packet/source changes, uncertain vector results and private provenance. Add five authored scenarios; server qualification and installed-client acceptance remain separate.
