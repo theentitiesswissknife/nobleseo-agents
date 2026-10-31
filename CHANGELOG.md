@@ -4,6 +4,8 @@ All notable changes to this repository. Versions follow semantic versioning; the
 
 ## [Unreleased]
 
+- Guide discovered native GSC keyword article intake with exact active project property/section, explicit input provenance and existing approval/work/native-credit bounds. Preserve source-drift refusals, unapplied original review diagnostics and employee-only opportunity conversion. Add five authored scenarios; deployment and installed-client acceptance remain separate.
+
 - Guide discovered native social generation through exact source/style/voice/model previews, browser approval, original queue delivery, managed text/image USD and native credit bounds, and stored status. Preserve partial derivatives, unknown storage outcomes and pending credit holds; publication remains separate. Add eight authored scenarios. Backend deployment and installed-client acceptance remain separate.
 
 - Guide discovered Factory cancellation through current checkpoint review, fresh factory-run consent, native Editor authority and original stop receipts. Preserve unknown abort acknowledgements, late work/accounting and independent downstream lifecycles; replay never repeats queue effects. Add six authored scenarios. Factory paid preview/start remain separate capabilities.
