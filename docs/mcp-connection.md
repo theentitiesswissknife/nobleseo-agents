@@ -4,6 +4,8 @@ The plugin supplies skills; it does not automatically install an MCP server entr
 
 The endpoint uses Streamable HTTP and OAuth. No local backend or API key is needed. The registered callback must match the supplied host, port and path; do not substitute loopback hostnames.
 
+For Labs, see the separate [base backend deployment receipt](LABS_BASE_DEPLOYMENT_2026-11-01.md). The Codex and Claude clients offer 18 base scopes; existing grants retain their original permissions. Reconnect and consent to the scopes needed for additional workflows before creating a new execution preview. The offered set is `analytics.read`, `brief.write`, `clusterizer.run`, `content.generate`, `content.read`, `content.score`, `content.write`, `coverage.read`, `delivery.write`, `knowledge.read`, `knowledge.write`, `links.read`, `links.write`, `media.read`, `publish`, `read`, `research.curate` and `research.run`. Factory permissions are excluded; `analytics.read` covers GSC.
+
 ## Codex
 
 Merge this into `~/.codex/config.toml`, replacing every placeholder. Update existing `nobleseo` tables instead of adding duplicates. The callback port must be numeric and match the explicit port in a direct local callback URL.

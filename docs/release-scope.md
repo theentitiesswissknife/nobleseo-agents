@@ -21,4 +21,4 @@ Advanced generation/editor combinations, the remaining Link Workbench operations
 
 Installing or updating this plugin alone cannot add backend tools or fix a backend approval failure. If a tool or scope is absent, retain the discovered limitation and use a permitted export/local-review fallback where appropriate. Do not claim that reconnecting or reinstalling repaired an approval.
 
-Local backend protocol/domain tests, plugin repository checks, GitHub CI, backend deployment, installed-client testing and live provider acceptance are distinct evidence. This release makes no live/provider or installed-client acceptance claim from local tests. No backend Labs deployment accompanies this skill publication.
+Local backend protocol/domain tests, plugin repository checks, GitHub CI, backend deployment, installed-client testing and live provider acceptance are distinct evidence. This release makes no live/provider or installed-client acceptance claim from local tests. The original skill publication did not deploy Labs; the separate backend delivery is tracked in the [Labs deployment receipt](LABS_BASE_DEPLOYMENT_2026-11-01.md).

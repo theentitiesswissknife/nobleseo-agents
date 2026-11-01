@@ -28,6 +28,8 @@ Version 0.3.0 contains the verified base workflows. Factory, WordPress and Googl
 
 The plugin contains guidance and local chart scripts. It does not deploy or upgrade the NobleSEO backend. Tool discovery and current native flags/permissions remain authoritative.
 
+The separate Labs backend delivery, approval repair and OAuth scope setup are tracked in the [Labs base deployment receipt](docs/LABS_BASE_DEPLOYMENT_2026-11-01.md). The v0.3.0 ZIP and its checksum remain unchanged.
+
 ## Install
 
 ### Claude Code
