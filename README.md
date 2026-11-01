@@ -68,6 +68,8 @@ New clustering and research runs require an exact preview approved in NobleSEO. 
 
 ## Repository layout
 
+See the [MCP documentation index](docs/README.md), [user guide](docs/MCP_USER_GUIDE.md) and [R2 work plan](docs/R2_TODO.md) for setup, daily use, troubleshooting and the next delivery checklist.
+
 ```
 .claude-plugin/marketplace.json     Claude Code marketplace
 .agents/plugins/marketplace.json    Codex marketplace
